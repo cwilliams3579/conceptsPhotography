@@ -1,0 +1,42 @@
+
+<% content_for :title do %>Sign Up<% end %>
+<br><br><br><br><br><br><br>
+<div class="container">
+  <div class="card">
+    <div class="card-block" style="background:#fff;">
+      <div class="form-header mdb-gradient">
+        <h3><i class="fa fa-pencil faa-horizontal animated"></i> Sign Up</h3>
+      </div>
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="md-form">
+          <i class="fa fa-user prefix fa-fonts"></i>
+          <%= f.text_field :first_name, :autofocus => true, placeholder: "John", class: 'form-control' %>
+        </div>
+        <div class="md-form">
+          <i class="fa fa-user prefix fa-fonts"></i>
+          <%= f.text_field :last_name, placeholder: "Doe", class: 'form-control' %>
+        </div>
+        <div class="md-form">
+          <i class="fa fa-envelope prefix fa-fonts"></i>
+          <%= f.email_field :email, placeholder: "johndoe@gmail.com", class: 'form-control' %>
+        </div>
+        <div class="md-form">
+          <i class="fa fa-lock prefix fa-fonts"></i>
+          <%= f.password_field :password, placeholder: "Create Password", class: 'form-control' %>
+        </div>
+        <div class="md-form">
+          <i class="fa fa-lock prefix fa-fonts"></i>
+          <%= f.password_field :password_confirmation, placeholder: "Repeat password", class: 'form-control' %>
+        </div>
+        <div class="md-form">
+          <%= f.button "Sign up", class: "btn btn-block btn-lg mdb-gradient", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
+        </div>
+      <% end %>
+        <p class="black-text">Already have an account? <a href="/users/sign_in">Sign In</a></p>
+    </div>
+  </div>
+</div>
+<br><br>
+
+<%= render "devise/shared/links" %>
