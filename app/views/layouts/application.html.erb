@@ -12,13 +12,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
   </head>
-  <body class="fixed-sn cyan-skin">
+  <body class="fixed-sn mdb-skin">
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+    <div class="container-fluid">
+     <%= render 'layouts/messages' %>
+     <%= yield %>
+    </div>
+      <%= render 'layouts/footer' %>
+      <%= render 'layouts/scripts' %>
   </body>
 </html>
