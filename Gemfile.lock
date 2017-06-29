@@ -232,6 +232,7 @@ GEM
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     high_voltage (3.0.0)
+    hirb (0.7.3)
     hub (1.12.4)
     i18n (0.8.4)
     inflecto (0.0.2)
@@ -256,6 +257,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
+    mini_magick (4.7.2)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
     multi_json (1.12.1)
@@ -369,10 +371,12 @@ DEPENDENCIES
   figaro
   fog
   high_voltage
+  hirb
   hub
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  mini_magick
   pg
   puma (~> 3.7)
   rails (~> 5.1.2)

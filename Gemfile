@@ -13,6 +13,7 @@ gem 'turbolinks', '~> 5'
 gem 'devise'
 gem 'carrierwave'
 gem 'fog'
+gem 'mini_magick'
 gem 'figaro'
 gem 'jbuilder', '~> 2.5'
 group :development, :test do
@@ -21,6 +22,7 @@ group :development, :test do
   gem 'selenium-webdriver'
 end
 group :development do
+  gem 'hirb'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
