@@ -15,15 +15,16 @@
 
     <link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled.min.css" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:500i" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:500i" rel="stylesheet">
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
 
     <%= csrf_meta_tags %>
   </head>
-  <body class="fixed-sn grey-gradient">
+  <body class="hidden-sn grey-gradient">
     <header>
       <%= render 'layouts/navigation' %>
+      <%#= render 'layouts/nav' %>
     </header>
     <br><br>
     <div class="container-fluid white-text">

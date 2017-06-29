@@ -37,10 +37,11 @@
           <%= f.button "Sign up", class: "btn btn-block btn-lg btn-rounded grey-gradient", data: { disable_with: "<i class='fa fa-spinner fa-5x fa-spin'></i> Processing..."} %>
         </div>
       <% end %>
-        <p class="black-text">Already have an account? <a href="/users/sign_in">Sign In</a></p>
+        <p class="black-text">Already have an account? <i class="fa fa-sign-in faa-horizontal animated grey-text" aria-hidden="true"></i>
+ <a href="/users/sign_in">Sign In</a></p>
     </div>
   </div>
 </div>
 <br><br>
 
-<%= render "devise/shared/links" %>
+<%= link_to '', :back, class: "fa fa-hand-o-left fa-2x grey-text faa-horizontal animated" %>
