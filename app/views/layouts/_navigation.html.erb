@@ -82,37 +82,36 @@
             <!-- Breadcrumb-->
             <div class="breadcrumb-dn mr-auto">
                 <ol class="breadcrumb header-breadcrumb">
-                    <li><a href="/" class="navbar-brand">Conceived Concepts</a></li>
+                    <li><a href="/" class="navbar-brand">Conceived <i class="fa fa-camera-retro"></i> Concepts</a></li>
                 </ol>
             </div>
-
 
             <ul class="nav navbar-nav nav-flex-icons ml-auto">
 
               <li class="nav-item">
-                  <a href="/pages/gallery" class="nav-link wow fadeInRightBig"><i class="fa fa-camera-retro"></i> <span class="hidden-sm-down">Gallery</span></a>
+                  <a href="/pages/gallery" class="nav-link wow fadeInRightBig"><i class="fa fa-camera-retro"></i> <span class="hidden-sm-down nav-fonts">Gallery</span></a>
               </li>&nbsp;&nbsp;
                 <li class="nav-item">
-                    <a class="nav-link wow fadeInRightBig" data-toggle="modal" data-target="#modal-contact"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Contact</span></a>
+                    <a class="nav-link wow fadeInRightBig" data-toggle="modal" data-target="#modal-contact"><i class="fa fa-envelope"></i> <span class="hidden-sm-down nav-fonts">Contact</span></a>
                 </li>&nbsp;&nbsp;
                 <li class="nav-item">
-                    <a href="/pages/about_me" class="nav-link wow fadeInRightBig"><i class="fa fa-id-card" ></i> <span class="hidden-sm-down">About</span></a>
+                    <a href="/pages/about_me" class="nav-link wow fadeInRightBig"><i class="fa fa-id-card" ></i> <span class="hidden-sm-down nav-fonts">About</span></a>
                 </li>&nbsp;&nbsp;
               <% if user_signed_in? %>
                 <li class="nav-item">
-                  <a href="/users/edit" class="nav-link wow fadeInRightBig"><i class="fa fa-user faa-tada animated-hover"></i> <span class="hidden-sm-down"><%= current_user.first_name.capitalize %></span></a>
+                  <a href="/users/edit" class="nav-link wow fadeInRightBig"><i class="fa fa-user faa-tada animated-hover"></i> <span class="hidden-sm-down nav-fonts"><%= current_user.first_name.capitalize %></span></a>
                 </li>&nbsp;&nbsp;
                 <li class="nav-item">
-                  <a class="nav-link wow fadeInRightBig" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fa fa-sign-out faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign Out</span></a>
+                  <a class="nav-link wow fadeInRightBig" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fa fa-sign-out faa-tada animated-hover"></i> <span class="hidden-sm-down nav-fonts">Sign Out</span></a>
                 </li>
             <% else %>
               <li class="nav-item">
                 <a href="/users/sign_up" class="nav-link wow fadeInRightBig" >
-                  <i class="fa fa-user-plus faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign Up</span>
+                  <i class="fa fa-user-plus faa-tada animated-hover"></i> <span class="hidden-sm-down nav-fonts">Sign Up</span>
                 </a>
               </li>&nbsp;&nbsp;
               <li class="nav-item">
-                <a href="/users/sign_in" class="nav-link wow zoomIn"><i class="fa fa-sign-in faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign In</span>
+                <a href="/users/sign_in" class="nav-link wow zoomIn"><i class="fa fa-sign-in faa-tada animated-hover"></i> <span class="hidden-sm-down nav-fonts">Sign In</span>
                 </a>
               </li>
             <% end %>
