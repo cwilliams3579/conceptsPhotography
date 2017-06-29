@@ -1,4 +1,4 @@
-<div class="container">
+<div class="col-md-6 mx-auto">
   <%= form_with(model: post, multiple: true, local: true) do |f| %>
     <% if post.errors.any? %>
       <div id="error_explanation">
@@ -13,30 +13,25 @@
     <% end %>
 
     <div class="md-form">
+      <i class="fa fa-camera-retro prefix fa-fonts"></i>
+      <%= image_tag(@post.image.url) if @post.image? %>
+      <%= f.file_field :image %>
+      <%= f.hidden_field :image_cache %>
+    </div>
+
+    <div class="md-form">
       <%= f.label :title %>
       <%= f.text_field :title, id: :post_title, autofocus: true, class: "form-control" %>
     </div>
 
     <div class="md-form">
-      <%= f.label :content %>
+      <%= f.label :description %>
       <%= f.text_area :content, id: :post_content, class: "md-textarea" %>
     </div>
 
-    <div class="md-form">
-      <i class="fa fa-camera-retro prefix fa-fonts"></i>
-      <%= image_tag(@post.image_url) if @post.image? %>
-      <%= f.file_field :image %>
-      <%= f.hidden_field :image_cache %>
-      
-    </div>
-
-    <div class="md-form">
-      <%= f.label :user_id %>
-      <%= f.text_field :user_id, id: :post_user_id %>
-    </div>
-
     <div class="actions">
-      <%= f.submit %>
+      <%#= f.submit %>
+      <%= f.button class: "btn btn-block btn-lg btn-rounded grey-gradient", data: { disable_with: "<i class='fa fa-spinner fa-5x fa-spin'></i> Processing..."} %>
     </div>
   <% end %>
 

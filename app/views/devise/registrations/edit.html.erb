@@ -1,43 +1,58 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<% content_for :title do %>Edit Account<% end %>
+<br><br><br><br>
+<br><br><br><br>
+<div class="col-md-6 mx-auto">
+  <div class="card grey-gradient">
+    <div class="card-block grey-gradient">
+      <div class="form-header grey-gradient">
+        <h3>Edit <%= current_user.first_name.to_s.humanize %>'s Account</h3>
+      </div>
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="md-form">
+          <i class="fa fa-user prefix grey-text"></i>
+          <%= f.text_field :first_name, :autofocus => true, class: 'form-control' %>
+        </div>
+        <div class="md-form">
+          <i class="fa fa-user prefix grey-text"></i>
+          <%= f.text_field :last_name, placeholder: "Doe", class: 'form-control' %>
+        </div>
+        <div class="md-form">
+          <i class="fa fa-envelope prefix grey-text"></i>
+          <%= f.email_field :email, class: 'form-control' %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+        </div>
+        <fieldset>
+          <p class="text-center"></p>
+          <div class="md-form">
+            <i class="fa fa-lock prefix grey-text"></i>
+            <%= f.password_field :password, :autocomplete => 'off', class: 'form-control', placeholder: "Leave these fields blank if you don't want to change your password" %>
+          </div>
+          <div class="md-form">
+            <i class="fa fa-lock prefix grey-text"></i>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+          </div>
+        </fieldset>
+        <fieldset>
+          <p class="text-center"></p>
+          <div class="md-form">
+            <i class="fa fa-lock prefix grey-text"></i>
+            <%= f.password_field :current_password, class: 'form-control', placeholder: "You must enter your current password to make changes" %>
+          </div>
+        </fieldset>
+        <div class="md-form">
+          <%= f.button "Update", class: "btn btn-block btn-rounded btn-lg grey-gradient", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
+        </div>
+      <% end %>
+      </div>
+      <div class="md-form text-center">
+      <h3>Cancel Account</h3>
+      <p>Unhappy? We'll be sad to see you go.</p>
+      <%= link_to "", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'fa fa-trash fa-lg grey-text' %>
+    </div>
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to '', :back, class: "fa fa-hand-o-left fa-2x grey-text faa-horizontal animated" %>
+</div>
+<br><br>
+<%= link_to "", root_path, class: "fa fa-hand-o-left fa-2x faa-horizontal animated grey-text" %>

@@ -100,9 +100,8 @@
                 </li>&nbsp;&nbsp;
               <% if user_signed_in? %>
                 <li class="nav-item">
-
-                  <a href="/users/edit" class="nav-link wow fadeInRightBig"><i class="fa fa-user-secret faa-tada animated-hover"></i> <span class="hidden-sm-down"><%= current_user.first_name.capitalize %></span></a>
-                </li>
+                  <a href="/users/edit" class="nav-link wow fadeInRightBig"><i class="fa fa-user faa-tada animated-hover"></i> <span class="hidden-sm-down"><%= current_user.first_name.capitalize %></span></a>
+                </li>&nbsp;&nbsp;
                 <li class="nav-item">
                   <a class="nav-link wow fadeInRightBig" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fa fa-sign-out faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign Out</span></a>
                 </li>
