@@ -89,22 +89,34 @@
 
             <ul class="nav navbar-nav nav-flex-icons ml-auto">
 
-                <li class="nav-item ">
-                    <a class="nav-link" data-toggle="modal" data-target="#modal-contact"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Contact</span></a>
+              <li class="nav-item">
+                  <a href="/pages/gallery" class="nav-link wow fadeInRightBig"><i class="fa fa-camera-retro"></i> <span class="hidden-sm-down">Gallery</span></a>
+              </li>&nbsp;&nbsp;
+                <li class="nav-item">
+                    <a class="nav-link wow fadeInRightBig" data-toggle="modal" data-target="#modal-contact"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Contact</span></a>
                 </li>&nbsp;&nbsp;
-                <li class="nav-item ">
-                    <a href="/pages/about_me" class="nav-link"><i class="fa fa-id-card"></i> <span class="hidden-sm-down">About</span></a>
+                <li class="nav-item">
+                    <a href="/pages/about_me" class="nav-link wow fadeInRightBig"><i class="fa fa-id-card" ></i> <span class="hidden-sm-down">About</span></a>
                 </li>&nbsp;&nbsp;
-                <li class="nav-item ">
-                    <a href="/users/sign_up" class="nav-link"><i class="fa fa-user-plus"></i> <span class="hidden-sm-down">Register</span></a>
-                </li>&nbsp;&nbsp;
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-no-turbolink='true'><i class="fa fa-user"></i> <span class="hidden-sm-down">Profile</span></a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                        <a class="dropdown-item" href="#">Logout</a>
-                        <a class="dropdown-item" href="#">My account</a>
-                    </div>
+              <% if user_signed_in? %>
+                <li class="nav-item">
+
+                  <a href="/users/edit" class="nav-link wow fadeInRightBig"><i class="fa fa-user-secret faa-tada animated-hover"></i> <span class="hidden-sm-down"><%= current_user.first_name.capitalize %></span></a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link wow fadeInRightBig" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fa fa-sign-out faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign Out</span></a>
+                </li>
+            <% else %>
+              <li class="nav-item">
+                <a href="/users/sign_up" class="nav-link wow fadeInRightBig" >
+                  <i class="fa fa-user-plus faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign Up</span>
+                </a>
+              </li>&nbsp;&nbsp;
+              <li class="nav-item">
+                <a href="/users/sign_in" class="nav-link wow zoomIn"><i class="fa fa-sign-in faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign In</span>
+                </a>
+              </li>
+            <% end %>
             </ul>
 
         </nav>
@@ -120,47 +132,47 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        <h4 class="modal-title" id="myModalLabel">Write to us</h4>
+                        <h4 class="h4-responsive text-center mx-auto" id="myModalLabel">Write to us</h4>
                     </div>
                     <!--Body-->
                     <div class="modal-body">
-                        <p>We like to receive a messages.</p>
+                        <p class="text-center">We'll contact you shortly.</p>
                         <br>
                         <div class="md-form">
-                            <i class="fa fa-user prefix"></i>
+                            <i class="fa fa-user prefix grey-text"></i>
                             <input type="text" id="form22" class="form-control">
                             <label for="form42">Your name</label>
                         </div>
 
                         <div class="md-form">
-                            <i class="fa fa-envelope prefix"></i>
+                            <i class="fa fa-envelope prefix grey-text"></i>
                             <input type="text" id="form32" class="form-control">
                             <label for="form34">Your email</label>
                         </div>
 
                         <div class="md-form">
-                            <i class="fa fa-tag prefix"></i>
+                            <i class="fa fa-tag prefix grey-text"></i>
                             <input type="text" id="form32" class="form-control">
                             <label for="form34">Subject</label>
                         </div>
 
                         <div class="md-form">
-                            <i class="fa fa-pencil prefix"></i>
+                            <i class="fa fa-pencil prefix grey-text"></i>
                             <textarea type="text" id="form8" class="md-textarea"></textarea>
                             <label for="form8">Icon Prefix</label>
                         </div>
 
                         <div class="text-center">
-                            <button class="btn btn-primary">Submit</button>
+                            <button class="btn btn-rounded btn-block btn-lg grey-gradient">Submit</button>
 
                             <div class="call">
-                                <p>Or would you prefer to call? <span class="cf-phone"><i class="fa fa-phone"></i>+01 234 565 280</span></p>
+                                <p>Or would you prefer to call? <span class="cf-phone"><i class="fa fa-phone grey-text"></i>+01 234 565 280</span></p>
                             </div>
                         </div>
                     </div>
                     <!--Footer-->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-rounded red-gradient" data-dismiss="modal">Close</button>
                     </div>
                 </div>
                 <!--/.Content-->
