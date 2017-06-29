@@ -2,24 +2,32 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title><%= content_for?(:title) ? yield(:title) : "Concepts Photography" %></title>
+
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Concepts Photography" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+
     <!-- CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
     <link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:500i" rel="stylesheet"> 
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+
     <%= csrf_meta_tags %>
   </head>
-  <body class="fixed-sn grey-skin">
+  <body class="fixed-sn grey-gradient">
     <header>
       <%= render 'layouts/navigation' %>
-    </header><br><br>
-    <div class="container-fluid">
-      <br>
-      <br>
-      <br>
+    </header>
+    <br><br>
+    <div class="container-fluid white-text">
+      <br><br><br>
      <div class="container">
        <%= render 'layouts/messages' %>
      </div>

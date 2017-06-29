@@ -2,64 +2,62 @@
     <!-- Double navigation -->
     <header>
         <!-- Sidebar navigation -->
-        <ul id="slide-out" class="side-nav fixed grey-gradient custom-scrollbar sn-bg-2">
+        <ul id="slide-out" class="side-nav fixed custom-scrollbar sn-bg-2">
 
             <!-- Logo -->
             <li>
-                <div class="logo-wrapper waves-light grey-gradient">
-                    <!-- <a href="#!"><img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center"></a> -->
+                <div class="logo-wrapper waves-light">
+                    <!-- <a href="#!"></a> -->
                 </div>
             </li>
             <!--/ Logo -->
 
             <!--Search form-->
             <li>
-                <form class="search-form grey-gradient" role="search">
+                <form class="search-form " role="search">
                     <div class="form-group waves-light waves-effect waves-light">
-                        <input type="text" class="form-control grey-gradient" placeholder="Search">
+                        <input type="text" class="form-control" placeholder="Search">
                     </div>
                 </form>
             </li>
             <!--/Search form-->
 
             <!-- Side navigation links -->
-            <ul class="collapsible grey-gradient collapsible-accordion">
-                <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-camera-retro"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i></a>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li><a href="/posts" class="waves-effect">Gallery</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-envelope"></i> Blog<i class="fa fa-angle-down rotate-icon"></i></a>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li>
-                              <a href="/posts" class="waves-effect">Blog</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+            <ul class="collapsible collapsible-accordion">
+              <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-book"></i> Blog<i class="fa fa-angle-down rotate-icon"></i></a>
+                  <div class="collapsible-body">
+                      <ul>
+                          <li>
+                            <a href="/posts" class="waves-effect">Blog</a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+
+              <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-camera-retro"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i></a>
+                  <div class="collapsible-body">
+                      <ul>
+                          <li><a href="/pages/gallery" class="waves-effect">Gallery</a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
 
                 <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-envelope"></i> Contact<i class="fa fa-angle-down rotate-icon"></i></a>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a href="!#" class="waves-effect">Default Post Page</a>
+                            <li><a href="!#" class="waves-effect">Contact Me</a>
                             </li>
                         </ul>
                     </div>
                 </li>
 
-                <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-diamond"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
+                <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-id-card"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a href="https://mdbootstrap.com/live/_MDB/templates/Magazine/magazine%20category%20page%20one.html" class="waves-effect">Category Page V.1</a>
+                            <li><a href="#" class="waves-effect">About Me</a>
                             </li>
-                            <li><a href="https://mdbootstrap.com/live/_MDB/templates/Magazine/magazine%20category%20page%20two.html" class="waves-effect">Category Page V.2</a>
-                            </li>
-                            <li><a href="https://mdbootstrap.com/live/_MDB/templates/Magazine/magazine%20category%20page%20three.html" class="waves-effect">Category Page V.3</a>
-                            </li>
+                            <li><a href="#" class="waves-effect">About Website</a>
                         </ul>
                     </div>
                 </li>
@@ -83,7 +81,7 @@
             <!-- Breadcrumb-->
             <div class="breadcrumb-dn mr-auto">
                 <ol class="breadcrumb header-breadcrumb">
-                    <li class="navbar-brand"><a href="/">Conceive Concepts Photography</a></li>
+                    <li><a href="/" class="navbar-brand">Conceived Concepts</a></li>
                 </ol>
             </div>
 
@@ -92,15 +90,15 @@
 
                 <li class="nav-item ">
                     <a class="nav-link" data-toggle="modal" data-target="#modal-contact"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Contact</span></a>
-                </li>
+                </li>&nbsp;&nbsp;
                 <li class="nav-item ">
-                    <a class="nav-link"><i class="fa fa-comments-o"></i> <span class="hidden-sm-down">Support</span></a>
-                </li>
+                    <a class="nav-link"><i class="fa fa-id-card"></i> <span class="hidden-sm-down">About</span></a>
+                </li>&nbsp;&nbsp;
                 <li class="nav-item ">
-                    <a class="nav-link"><i class="fa fa-sign-in"></i> <span class="hidden-sm-down">Register</span></a>
-                </li>
+                    <a class="nav-link"><i class="fa fa-user-plus"></i> <span class="hidden-sm-down">Register</span></a>
+                </li>&nbsp;&nbsp;
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <span class="hidden-sm-down">Profile</span></a>
+                    <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-no-turbolink='true'><i class="fa fa-user"></i> <span class="hidden-sm-down">Profile</span></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
                         <a class="dropdown-item" href="#">Logout</a>
                         <a class="dropdown-item" href="#">My account</a>
