@@ -4,8 +4,8 @@
 <br><br>
 <br><br>
 <div class="col-md-4 mx-auto">
-  <div class="card">
-    <div class="card-block" style="background:#fff;">
+  <div class="card grey-gradient">
+    <div class="card-block">
       <div class="form-header btn-rounded grey-gradient">
         <h3>
            Sign Up
@@ -15,30 +15,30 @@
         <%= devise_error_messages! %>
         <div class="md-form">
           <i class="fa fa-user prefix grey-text"></i>
-          <%= f.text_field :first_name, :autofocus => true, placeholder: "John", class: 'form-control' %>
+          <%= f.text_field :first_name, :autofocus => true, placeholder: "John", class: 'form-control text-white' %>
         </div>
         <div class="md-form">
           <i class="fa fa-user prefix grey-text"></i>
-          <%= f.text_field :last_name, placeholder: "Doe", class: 'form-control' %>
+          <%= f.text_field :last_name, placeholder: "Doe", class: 'form-control text-white' %>
         </div>
         <div class="md-form">
           <i class="fa fa-envelope prefix grey-text"></i>
-          <%= f.email_field :email, placeholder: "johndoe@gmail.com", class: 'form-control' %>
+          <%= f.email_field :email, placeholder: "johndoe@gmail.com", class: 'form-control text-white' %>
         </div>
         <div class="md-form">
           <i class="fa fa-lock prefix grey-text"></i>
-          <%= f.password_field :password, placeholder: "Create Password", class: 'form-control' %>
+          <%= f.password_field :password, placeholder: "Create Password", class: 'form-control text-white' %>
         </div>
         <div class="md-form">
           <i class="fa fa-lock prefix grey-text"></i>
-          <%= f.password_field :password_confirmation, placeholder: "Repeat password", class: 'form-control' %>
+          <%= f.password_field :password_confirmation, placeholder: "Repeat password", class: 'form-control text-white' %>
         </div>
         <div class="md-form">
           <%= f.button "Sign up", class: "btn btn-block btn-lg btn-rounded grey-gradient", data: { disable_with: "<i class='fa fa-spinner fa-5x fa-spin'></i> Processing..."} %>
         </div>
       <% end %>
-        <p class="black-text">Already have an account? <i class="fa fa-sign-in faa-horizontal animated grey-text" aria-hidden="true"></i>
- <a href="/users/sign_in">Sign In</a></p>
+        <p class="white-text">Already have an account? <i class="fa fa-sign-in faa-horizontal animated grey-text" aria-hidden="true"></i>
+ <a href="/users/sign_in" class="white-text">Sign In</a></p>
     </div>
   </div>
 </div>
