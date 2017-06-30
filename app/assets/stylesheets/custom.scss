@@ -16,3 +16,23 @@
 .side-nav .logo-wrapper img {
     padding: 0px !important;
 }
+
+.page-footer {
+    background-image: url("https://github.com/coneivedconcepts/screenshots/blob/master/logo%20gRadient.jpg?raw=true") !important;
+    width: 100% !important;
+    height: 50vh;
+    background-size: 100% 60vh !important;
+    background-repeat: no-repeat !important;
+}
+
+.card {
+  // background-image: url("https://github.com/coneivedconcepts/screenshots/blob/master/logo%20gRadient.jpg?raw=true") !important;
+  // background-size: 100% 70vh !important;
+  // background-repeat: no-repeat !important;
+  .form-control {
+    border-bottom-color: #fff;
+  }
+  .form-control:active {
+    border-bottom-color: red;
+  }
+}
