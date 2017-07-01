@@ -12,9 +12,11 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'devise'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
-gem 'fog'
+gem "fog-aws"
 gem 'mini_magick'
 gem 'figaro'
+gem 'friendly_id'
+gem 'searchkick'
 gem 'jbuilder', '~> 2.5'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -23,6 +25,11 @@ group :development, :test do
 end
 group :development do
   gem 'hirb'
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
@@ -42,4 +49,5 @@ group :development, :test do
 end
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end

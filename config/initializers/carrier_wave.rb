@@ -1,4 +1,5 @@
 require 'carrierwave/orm/activerecord'
+
 CarrierWave.configure do |config|
   config.fog_provider = 'fog/aws'                        # required
   config.fog_credentials = {
@@ -11,5 +12,5 @@ CarrierWave.configure do |config|
   }
   config.fog_directory  = 'name_of_directory'                          # required
   config.fog_public     = false                                        # optional, defaults to true
-  config.fog_attributes = { cache_control: "public, max-age=#{365.day.to_i}" } # optional, defaults to {}
+  config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" } # optional, defaults to {}
 end

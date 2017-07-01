@@ -14,8 +14,8 @@
 
     <div class="md-form">
       <i class="fa fa-camera-retro prefix fa-fonts"></i>
-      <%= image_tag(@post.image.url) if @post.image? %>
-      <%= f.file_field :image %>
+      <%= image_tag(@post.images.url) if @post.image? %>
+      <%= f.file_field :images, multiple: true %>
       <%= f.hidden_field :image_cache %>
     </div>
 
