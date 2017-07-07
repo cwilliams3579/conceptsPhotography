@@ -1,6 +1,4 @@
-
-# require 'carrierwave/orm/activerecord'
-
+require 'carrierwave/orm/activerecord'
 if Rails.env.production?
   CarrierWave.configure do |config|
     config.storage = :fog
