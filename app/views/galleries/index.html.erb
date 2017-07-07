@@ -77,11 +77,10 @@
           <div class="card collection-card z-depth-1-half">
             <!--Card image-->
             <div class="hm-zoom">
-              <%#= link_to(image_tag(gallery.image_url), galleries_path(@gallery), class: "image-fluid gallery-img") %>
-               <%= link_to image_tag(gallery.image.url, class: "img-fluid gallery-img"), gallery_path(gallery) if gallery.image? %>
-              <div class="stripe dark">
+               <%= link_to image_tag(gallery.image.url, class: "img-fluid gallery-img white-text"), gallery_path(gallery) if gallery.image? %>
+              <div class="stripe dark white-text">
                 <a>
-                  <p>Image Title <i class="fa fa-chevron-right"></i></p>
+                  <p><%= link_to gallery.title, galleries_path(gallery) %> <i class="fa fa-chevron-right white-text"></i></p>
                 </a>
               </div>
             </div>
