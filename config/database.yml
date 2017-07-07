@@ -25,4 +25,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.postgresql
+  database: conceivedconcepts_production
+  username: ubuntu
+  password: <%= ENV['CONCEIVEDCONCEPTS_DATABASE_PASSWORD'] %>
