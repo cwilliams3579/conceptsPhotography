@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<br><br><br>
+<div class="container">
+
+  <!--Section: Blog v.4-->
+  <section class="section section-blog-fw">
+
+      <!--First row-->
+      <div class="row">
+          <div class="col-md-12">
+              <!--Featured image-->
+              <div class="view overlay hm-white-slight">
+                  <!-- <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(53).jpg"> -->
+                  <%= image_tag @gallery.image_url, class: "gallery-show" %>
+                  <a>
+                      <div class=""></div>
+                  </a>
+              </div>
+
+              <!--Post data-->
+              <div class="jumbotron grey-gradient">
+                  <h2><a><%= @gallery.title %></a></h2>
+                  <p>Posted by <a><%= @gallery.user.first_name.capitalize! %></a>, <%= time_ago_in_words(@gallery.created_at) %> ago</p>
+
+                  <!--Social shares-->
+                  <div class="social-counters ">
+
+                      <!--Facebook-->
+                      <a class="btn btn-fb ">
+                          <i class="fa fa-facebook left "></i>
+                          <span class="hidden-md-down ">Facebook</span>
+                      </a>
+                      <span class="counter ">46</span>
+
+                      <!--Twitter-->
+                      <a class="btn btn-tw ">
+                          <i class="fa fa-twitter left "></i>
+                          <span class="hidden-md-down ">Twitter</span>
+                      </a>
+                      <span class="counter ">22</span>
+
+                      <!--Google+-->
+                      <a class="btn btn-gplus ">
+                          <i class="fa fa-google-plus left "></i>
+                          <span class="hidden-md-down ">Google+</span>
+                      </a>
+                      <span class="counter ">31</span>
+
+                      <!--Comments-->
+                      <a class="btn btn-default ">
+                          <i class="fa fa-comments-o left "></i>
+                          <span class="hidden-md-down ">Comments</span>
+                      </a>
+                      <span class="counter ">18</span>
+
+                  </div>
+                  <!--/.Social shares-->
+
+              </div>
+              <!--/Post data-->
+
+              <!--Excerpt-->
+              <div class="excerpt">
+              
+              </div>
+          </div>
+      </div>
+      <!--/First row-->
+
+      <hr class="hr-mobile">
+
+  </section>
+  <!--/Section: Blog v.4-->
+
+</div>
+
+
+<%= link_to '', galleries_path, class: "fa fa-hand-o-left fa-2x white-text" %> |
+<%= link_to '', edit_gallery_path(@gallery), class: "fa fa-pencil fa-2x white-text" %>

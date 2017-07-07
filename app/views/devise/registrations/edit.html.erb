@@ -11,15 +11,15 @@
         <%= devise_error_messages! %>
         <div class="md-form">
           <i class="fa fa-user prefix grey-text"></i>
-          <%= f.text_field :first_name, :autofocus => true, class: 'form-control' %>
+          <%= f.text_field :first_name, :autofocus => true, class: 'form-control white-text' %>
         </div>
         <div class="md-form">
           <i class="fa fa-user prefix grey-text"></i>
-          <%= f.text_field :last_name, placeholder: "Doe", class: 'form-control' %>
+          <%= f.text_field :last_name, placeholder: "Doe", class: 'form-control white-text' %>
         </div>
         <div class="md-form">
           <i class="fa fa-envelope prefix grey-text"></i>
-          <%= f.email_field :email, class: 'form-control' %>
+          <%= f.email_field :email, class: 'form-control white-text' %>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
@@ -28,11 +28,11 @@
           <p class="text-center"></p>
           <div class="md-form">
             <i class="fa fa-lock prefix grey-text"></i>
-            <%= f.password_field :password, :autocomplete => 'off', class: 'form-control', placeholder: "Leave these fields blank if you don't want to change your password" %>
+            <%= f.password_field :password, :autocomplete => 'off', class: 'form-control white-text', placeholder: "Leave these fields blank if you don't want to change your password" %>
           </div>
           <div class="md-form">
             <i class="fa fa-lock prefix grey-text"></i>
-            <%= f.password_field :password_confirmation, class: 'form-control' %>
+            <%= f.password_field :password_confirmation, class: 'form-control white-text' %>
           </div>
         </fieldset>
         <fieldset>
@@ -55,4 +55,4 @@
   </div>
 </div>
 <br><br>
-<%= link_to "", root_path, class: "fa fa-hand-o-left fa-2x faa-horizontal animated grey-text" %>
+<%= link_to "", root_path, class: "fa fa-hand-o-left fa-2x faa-horizontal animated white-text" %>
