@@ -20,7 +20,7 @@
         <div class="md-form">
           <i class="fa fa-camera-retro prefix"></i>
           <%= image_tag(@gallery.image_url) if @gallery.image? %>
-          <%= f.file_field :remote_image_url %>
+          <%= f.file_field :image, accept: 'image/jpeg,image/jpg,image/gif,image/png' %>
           <%= f.hidden_field :image_cache %>
         </div>
 
