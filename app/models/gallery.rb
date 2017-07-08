@@ -1,7 +1,7 @@
 class Gallery < ApplicationRecord
   belongs_to :user
   mount_uploader :image, ImageUploader
-  attr_accessible :image
+  attr_accessor :image
   validate :image_size
   #serialize :images, JSON # If you use SQLite, add this line.
 
