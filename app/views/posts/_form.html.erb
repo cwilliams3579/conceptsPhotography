@@ -1,5 +1,5 @@
 <div class="col-md-6 mx-auto">
-  <%= form_with(model: post, multiple: true, local: true) do |f| %>
+  <%= form_with(model: post, multiple: true) do |f| %>
     <% if post.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>

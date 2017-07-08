@@ -4,7 +4,7 @@
       <div class="form-header grey-gradient">
         <i class="fa fa-camera-retro fa-2x" aria-hidden="true"></i>
       </div>
-      <%= form_with(model: gallery, html: { multipart: true }) do |f| %>
+      <%= form_with(model: gallery, multiple: true) do |f| %>
         <% if gallery.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
