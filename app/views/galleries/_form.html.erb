@@ -4,7 +4,7 @@
       <div class="form-header grey-gradient">
         <i class="fa fa-camera-retro fa-2x" aria-hidden="true"></i>
       </div>
-      <%= form_with(model: gallery, multiple: true, local: true) do |f| %>
+      <%= form_with(model: gallery, html: { multipart: true }) do |f| %>
         <% if gallery.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
@@ -20,7 +20,7 @@
         <div class="md-form">
           <i class="fa fa-camera-retro prefix"></i>
           <%= image_tag(@gallery.image_url) if @gallery.image? %>
-          <%= f.file_field :image, accept: 'image/jpeg,image/jpg,image/gif,image/png' %>
+          <%= f.file_field :remote_image_url %>
           <%= f.hidden_field :image_cache %>
         </div>
 
