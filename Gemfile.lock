@@ -419,12 +419,11 @@ DEPENDENCIES
   capistrano-rvm
   capistrano3-puma
   capybara (~> 2.13)
-  carrierwave (~> 1.1)
+  carrierwave
   coffee-rails (~> 4.2)
   devise
   figaro
   fog
-  fog-aws
   friendly_id
   high_voltage
   hirb
