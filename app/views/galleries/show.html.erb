@@ -18,7 +18,8 @@
               <!--Post data-->
               <div class="jumbotron grey-gradient">
                   <h2><a><%= @gallery.title %></a></h2>
-                  <p>Posted by <a><%= @gallery.user.first_name.capitalize! %></a>, <%= time_ago_in_words(@gallery.created_at) %> ago</p>
+                  <p>Uploaded <a><%= @gallery.user.first_name.capitalize! %></a> <%= @gallery.created_at.strftime("%B %d %Y") %></p>
+                  <a href="<%= @gallery.image_url %>" download="<%= @gallery.image_url %>" class="btn  btn-rounded btn-outline-white">Download Image</a>
 
                   <!--Social shares-->
                   <div class="social-counters ">
