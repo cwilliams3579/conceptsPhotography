@@ -1,6 +1,5 @@
 <% content_for :title do %>Edit Account<% end %>
 <br><br><br><br>
-<br><br><br><br>
 <div class="col-md-6 mx-auto">
   <div class="card grey-gradient">
     <div class="card-block grey-gradient">
@@ -10,15 +9,15 @@
       <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
         <%= devise_error_messages! %>
         <div class="md-form">
-          <i class="fa fa-user prefix grey-text"></i>
+          <i class="fa fa-user prefix white-text"></i>
           <%= f.text_field :first_name, :autofocus => true, class: 'form-control white-text' %>
         </div>
         <div class="md-form">
-          <i class="fa fa-user prefix grey-text"></i>
+          <i class="fa fa-user prefix white-text"></i>
           <%= f.text_field :last_name, placeholder: "Doe", class: 'form-control white-text' %>
         </div>
         <div class="md-form">
-          <i class="fa fa-envelope prefix grey-text"></i>
+          <i class="fa fa-envelope prefix white-text"></i>
           <%= f.email_field :email, class: 'form-control white-text' %>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -27,30 +26,30 @@
         <fieldset>
           <p class="text-center"></p>
           <div class="md-form">
-            <i class="fa fa-lock prefix grey-text"></i>
+            <i class="fa fa-lock prefix white-text"></i>
             <%= f.password_field :password, :autocomplete => 'off', class: 'form-control white-text', placeholder: "Leave these fields blank if you don't want to change your password" %>
           </div>
           <div class="md-form">
-            <i class="fa fa-lock prefix grey-text"></i>
+            <i class="fa fa-lock prefix white-text"></i>
             <%= f.password_field :password_confirmation, class: 'form-control white-text' %>
           </div>
         </fieldset>
         <fieldset>
           <p class="text-center"></p>
           <div class="md-form">
-            <i class="fa fa-lock prefix grey-text"></i>
+            <i class="fa fa-lock prefix white-text"></i>
             <%= f.password_field :current_password, class: 'form-control', placeholder: "You must enter your current password to make changes" %>
           </div>
         </fieldset>
         <div class="md-form">
-          <%= f.button "Update", class: "btn btn-block btn-rounded btn-lg grey-gradient", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
+          <%= f.button "Update", class: "btn btn-block btn-outline-white btn-rounded btn-lg grey-gradient", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
         </div>
       <% end %>
       </div>
       <div class="md-form text-center">
       <h3>Cancel Account</h3>
       <p>Unhappy? We'll be sad to see you go.</p>
-      <%= link_to "", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'fa fa-trash fa-lg grey-text' %>
+      <%= link_to "", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'fa fa-trash fa-lg text-danger' %>
     </div>
   </div>
 </div>

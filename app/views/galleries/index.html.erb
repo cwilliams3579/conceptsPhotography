@@ -1,156 +1,157 @@
-<div class="container">
 
-  <!--Section: Products v.4-->
-  <section class="section">
 
-    <!--Section heading-->
-    <h1 class="section-heading">Gallery</h1>
-    <!--Section sescription-->
-    <p class="section-description text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam. Quia, minima?</p>
+<!--First container-->
+<div class="container-fluid pt-4">
 
-    <!--Carousel Wrapper-->
-    <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
-      <!--Indicators-->
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-2" data-slide-to="1"></li>
-        <li data-target="#carousel-example-2" data-slide-to="2"></li>
-      </ol>
-      <!--/.Indicators-->
-      <!--Slides-->
-      <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active">
-          <div class="view hm-black-light">
-            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg" alt="First slide">
-          </div>
-          <div class="carousel-caption">
-            <h3 class="h3-responsive">Awesome</h3>
-            <p>First text</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <!--Mask color-->
-          <div class="view hm-black-strong">
-            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg" alt="Second slide">
-          </div>
-          <div class="carousel-caption">
-            <h3 class="h3-responsive">Splendid</h3>
-            <p>Secondary text</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <!--Mask color-->
-          <div class="view hm-black-slight">
-            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(24).jpg" alt="Third slide">
-          </div>
-          <div class="carousel-caption">
-            <h3 class="h3-responsive">Superb</h3>
-            <p>Third text</p>
-          </div>
-        </div>
-      </div>
-      <!--/.Slides-->
-      <!--Controls-->
-      <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-      <!--/.Controls-->
-    </div>
-    <!--/.Carousel Wrapper-->
 
-    <br> <br><br>
+
+  <!--Section: Wedding-->
+  <section id="wedding" class="section">
+    <h1 class="section-heading pt-4 pb-2 white-text wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Wedding</h1>
     <!--First row-->
-    <div class="row">
-
-      <% @galleries.last(4).each do |gallery| %>
-        <!--First column-->
-        <div class="col-lg-3 col-md-6 mb-r">
-
-          <!--Collection card-->
-          <div class="card collection-card z-depth-1-half">
-            <!--Card image-->
-            <div class="hm-zoom">
-               <%= link_to image_tag(gallery.image.url, class: "img-fluid gallery-img white-text"), gallery_path(gallery) if gallery.image? %>
-              <div class="stripe dark white-text">
-                <a>
-                  <p><%= link_to gallery.title, galleries_path(gallery) %> <i class="fa fa-chevron-right white-text"></i></p>
-                </a>
-              </div>
-            </div>
-            <!--/.Card image-->
-          </div>
-          <!--/.Collection card-->
-
+    <div class="row wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
+      <!--First column-->
+      <div class="col-md-12">
+        <div id="mdb-lightbox-ui"></div>
+        <!--Full width lightbox-->
+        <div class="mdb-lightbox" data-pswp-uid="5">
+          <figure class="col-md-4">
+            <a href="http://mdbootstrap.com/img/Photos/Horizontal/People/12-col/img%20(129).jpg" data-size="1600x1067">
+              <img src="http://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(129).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-4">
+            <a href="http://mdbootstrap.com/img/Photos/Horizontal/People/12-col/img%20(125).jpg" data-size="1600x1067">
+              <img src="http://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(125).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-4">
+            <a href="http://mdbootstrap.com/img/Photos/Horizontal/People/12-col/img%20(126).jpg" data-size="1600x1067">
+              <img src="http://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(126).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-3">
+            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(81).jpg" data-size="781x1172">
+              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(81).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-3">
+            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(84).jpg" data-size="781x1172">
+              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(84).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-3">
+            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(82).jpg" data-size="781x1172">
+              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(82).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-3">
+            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(85).jpg" data-size="781x1172">
+              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(85).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-4">
+            <a href="http://mdbootstrap.com/img/Photos/Horizontal/People/12-col/img%20(127).jpg" data-size="1600x1067">
+              <img src="http://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(127).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-4">
+            <a href="http://mdbootstrap.com/img/Photos/Horizontal/People/12-col/img%20(131).jpg" data-size="1600x1067">
+              <img src="http://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(131).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-4">
+            <a href="http://mdbootstrap.com/img/Photos/Horizontal/People/12-col/img%20(128).jpg" data-size="1600x1067">
+              <img src="http://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(128).jpg" class="img-fluid">
+            </a>
+          </figure>
         </div>
-        <!--/First column-->
-      <% end %>
-    </div>
-    <!--/First row-->
-  </section>
-  <!--/Section: Products v.4-->
-
-  <div class="container-fluid">
-
-
-    <div class="divider-new wow fadeIn mt-4 mb-5" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
-      <h1 class="h1-responsive">What's new?</h1>
-    </div>
-
-    <div class="tiles-mag">
-
-      <!-- Magazine -->
-      <div class="row">
-        <!-- Main Images -->
-        <div class="col-md-12">
-
-          <!--Tiles blog-->
-          <div class="tiles-blog">
-            <!--First row-->
-            <div class="row">
-              <!--First column-->
-              <% @galleries.each do |g| %>
-
-              <div class="col-md-4 tiles-margins wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
-                <!--Single blog post-->
-                <div class="tiles-blog-post waves-effect waves-light z-depth-1">
-                  <!--Blog post link-->
-
-                    <!--Image-->
-                    <div class="tiles-image hm-zoom">
-                      <%= link_to image_tag(g.image.url, class: "img-fluid main-imgs"), gallery_path(g) if g.image? %>
-                    </div>
-                    <!--/Image-->
-                  <!--Blog post link-->
-
-                </div>
-                <!--/Single blog post-->
-              </div>
-              <% end %>
-              <!--/First column-->
-              </div>
-            <!--/First row-->
-
-          </div>
-          <!--Tiles blog-->
-
-        </div>
-        <!--/ Main Images -->
-
+        <!--/Full width lightbox-->
       </div>
-      <!--/ Magazine -->
-
+      <!--/First column-->
     </div>
+    <!--First row-->
+  </section>
+  <!--/Section: Wedding-->
 
-  </div>
 
+  <!--/Section: Festival People-->
+  <!--Section: Models-->
+  <section id="models" class="section without-margin">
+    <h1 class="section-heading pt-4 pb-2 white-text wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Models</h1>
+    <!--First row-->
+    <div class="row wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
+      <!--First column-->
+      <div class="col-md-12">
+        <div id="mdb-lightbox-ui"></div>
+        <!--Full width lightbox-->
+        <div class="mdb-lightbox" data-pswp-uid="7">
+          <figure class="col-md-3">
+            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(58).jpg" data-size="781x1172">
+              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(58).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-3">
+            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(61).jpg" data-size="781x1172">
+              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(61).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-3">
+            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(62).jpg" data-size="781x1172">
+              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(62).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-3">
+            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(60).jpg" data-size="781x1172">
+              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(60).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-4">
+            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(66).jpg" data-size="1600x1067">
+              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(66).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-4">
+            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(70).jpg" data-size="1600x1067">
+              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(70).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-4">
+            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(74).jpg" data-size="1600x1067">
+              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(74).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-3">
+            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(64).jpg" data-size="781x1172">
+              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(64).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-3">
+            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(77).jpg" data-size="781x1172">
+              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(77).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-3">
+            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(78).jpg" data-size="781x1172">
+              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(78).jpg" class="img-fluid">
+            </a>
+          </figure>
+          <figure class="col-md-3">
+            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(76).jpg" data-size="781x1172">
+              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(76).jpg" class="img-fluid">
+            </a>
+          </figure>
+        </div>
+        <!--/Full width lightbox-->
+      </div>
+      <!--/First column-->
+    </div>
+    <!--First row-->
+  </section>
+  <!--/Section: Models-->
 </div>
+<!--/First container-->
 
-<br>
 
 <div class="md-form">
   <i class="fa fa-camera-retro" aria-hidden="true"></i>
