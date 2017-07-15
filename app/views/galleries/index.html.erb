@@ -1,9 +1,5 @@
-
-
 <!--First container-->
 <div class="container-fluid pt-4">
-
-
 
   <!--Section: Wedding-->
   <section id="wedding" class="section">
@@ -85,62 +81,31 @@
       <div class="col-md-12">
         <div id="mdb-lightbox-ui"></div>
         <!--Full width lightbox-->
-        <div class="mdb-lightbox" data-pswp-uid="7">
-          <figure class="col-md-3">
-            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(58).jpg" data-size="781x1172">
-              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(58).jpg" class="img-fluid">
-            </a>
-          </figure>
-          <figure class="col-md-3">
-            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(61).jpg" data-size="781x1172">
-              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(61).jpg" class="img-fluid">
-            </a>
-          </figure>
-          <figure class="col-md-3">
-            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(62).jpg" data-size="781x1172">
-              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(62).jpg" class="img-fluid">
-            </a>
-          </figure>
-          <figure class="col-md-3">
-            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(60).jpg" data-size="781x1172">
-              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(60).jpg" class="img-fluid">
-            </a>
-          </figure>
+        <% @galleries.each do |gallery| %>
+          <% gallery.images.each_with_index do |image, index| %>
+            <div class="mdb-lightbox" data-pswp-uid="7">
+              <figure class="col-md-3">
+                <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(58).jpg" data-size="781x1172">
+                  <%= image_tag(image.url) %>
+                </a>
+              </figure>
+            <% end %>
+          <% end %>
+
+          <% Gallery.first(3).each do |gallery|  %>
           <figure class="col-md-4">
             <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(66).jpg" data-size="1600x1067">
-              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(66).jpg" class="img-fluid">
+              <%#= image_tag gallery.image_url, class: "img-fluid" if gallery.image? %>
             </a>
           </figure>
-          <figure class="col-md-4">
-            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(70).jpg" data-size="1600x1067">
-              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(70).jpg" class="img-fluid">
-            </a>
-          </figure>
-          <figure class="col-md-4">
-            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(74).jpg" data-size="1600x1067">
-              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(74).jpg" class="img-fluid">
-            </a>
-          </figure>
-          <figure class="col-md-3">
-            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(64).jpg" data-size="781x1172">
-              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(64).jpg" class="img-fluid">
-            </a>
-          </figure>
-          <figure class="col-md-3">
-            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(77).jpg" data-size="781x1172">
-              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(77).jpg" class="img-fluid">
-            </a>
-          </figure>
-          <figure class="col-md-3">
-            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(78).jpg" data-size="781x1172">
-              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(78).jpg" class="img-fluid">
-            </a>
-          </figure>
-          <figure class="col-md-3">
-            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(76).jpg" data-size="781x1172">
-              <img src="http://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(76).jpg" class="img-fluid">
-            </a>
-          </figure>
+          <% end %>
+          <% Gallery.last(4).each do |gallery|  %>
+            <figure class="col-md-3">
+              <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(64).jpg" data-size="781x1172">
+                <%#= image_tag gallery.image_url, class: "img-fluid" if gallery.image? %>
+              </a>
+            </figure>
+          <% end %>
         </div>
         <!--/Full width lightbox-->
       </div>
@@ -152,8 +117,7 @@
 </div>
 <!--/First container-->
 
-
-<div class="md-form">
+<div class="mx-auto">
   <i class="fa fa-camera-retro" aria-hidden="true"></i>
   <%= link_to 'Upload New Image', new_gallery_path, class: "white-text" %>
 </div>

@@ -9,17 +9,21 @@
           <div class="col-md-12">
               <!--Featured image-->
               <div class="view overlay hm-white-slight">
-                  <%= image_tag @gallery.image_url, class: "gallery-show" %>
+                <% @gallery.images.each_with_index do |image, index| %>
+                  <%= image_tag image.url, class: "gallery-show" %>
                   <a>
                       <div class=""></div>
                   </a>
+                  <% end %>
               </div>
 
               <!--Post data-->
               <div class="jumbotron grey-gradient">
                   <h2><a><%= @gallery.title %></a></h2>
-                  <p>Uploaded <a><%= @gallery.user.first_name.capitalize! %></a> <%= @gallery.created_at.strftime("%B %d %Y") %></p>
-                  <a href="<%= @gallery.image_url %>" download="<%= @gallery.image_url %>" class="btn  btn-rounded btn-outline-white">Download Image</a>
+                  <p>Uploaded <a><%= @gallery.created_at.strftime("%B %d %Y") %></p>
+                  <% @gallery.images.each_with_index do |image, index| %>
+                    <%= image_tag image.url, class: "gallery-show" %>
+                  <% end %>
 
                   <!--Social shares-->
                   <div class="social-counters ">
@@ -74,5 +78,5 @@
 </div>
 
 
-<%= link_to '', galleries_path, class: "fa fa-hand-o-left fa-2x white-text" %> |
-<%= link_to '', edit_gallery_path(@gallery), class: "fa fa-pencil fa-2x white-text" %>
+<%#= link_to '', galleries_path, class: "fa fa-hand-o-left fa-2x white-text" %>
+<%#= link_to '', edit_gallery_path(@gallery), class: "fa fa-pencil fa-2x white-text" %>

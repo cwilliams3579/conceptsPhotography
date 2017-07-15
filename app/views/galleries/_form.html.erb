@@ -19,9 +19,9 @@
 
         <div class="md-form">
           <i class="fa fa-camera-retro prefix"></i>
-          <%= image_tag(@gallery.image_url) if @gallery.image? %>
-          <%= f.file_field :image, accept: 'image/jpeg,image/jpg,image/gif,image/png' %>
-          <%= f.hidden_field :image_cache %>
+          <%#= image_tag(@gallery.images_url) if @gallery.images? %>
+          <%= f.file_field :images, multiple: true, accept: 'image/jpeg,image/jpg,image/gif,image/png' %>
+          <%#= f.hidden_field :images_cache %>
         </div>
 
         <br>
