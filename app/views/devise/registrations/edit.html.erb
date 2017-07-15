@@ -7,7 +7,14 @@
         <h3>Edit <%= current_user.first_name.to_s.humanize %>'s Account</h3>
       </div>
       <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
-        <%= devise_error_messages! %>
+        <div class="text-danger text-center">
+          <%= devise_error_messages! %>
+        </div>
+        <div class="mx-auto">
+          <%= image_tag(@user.image_url, class: "rounded-circle") if @user.image? %><br>
+          <%= f.file_field :image %>
+          <%= f.hidden_field :image_cache %>
+        </div>
         <div class="md-form">
           <i class="fa fa-user prefix white-text"></i>
           <%= f.text_field :first_name, :autofocus => true, class: 'form-control white-text' %>
