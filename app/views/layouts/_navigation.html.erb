@@ -101,7 +101,14 @@
                 </li>&nbsp;&nbsp;
               <% if user_signed_in? %>
                 <li class="nav-item">
-                  <a href="/users/edit" class="nav-link wow fadeInRightBig"><i class="fa fa-user faa-tada animated-hover"></i> <span class="hidden-sm-down nav-fonts"><%= current_user.first_name.capitalize %></span></a>
+                  <a href="/users/edit" class="nav-link wow fadeInRightBig">
+                    <% if current_user.image?  %>
+                      <%= image_tag current_user.image.url, class: "sm-pic" %>
+                    <% else %>
+                      <i class="fa fa-user"></i>
+                    <% end %>
+                    <span class="hidden-sm-down nav-fonts"><%= current_user.first_name.capitalize %></span>
+                  </a>
                 </li>&nbsp;&nbsp;
                 <li class="nav-item">
                   <a class="nav-link wow fadeInRightBig" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fa fa-sign-out faa-tada animated-hover"></i> <span class="hidden-sm-down nav-fonts">Sign Out</span></a>
@@ -163,7 +170,7 @@
                         </div>
 
                         <div class="text-center">
-                            <button class="btn btn-rounded btn-block btn-lg grey-gradient">Submit</button>
+                            <button class="btn btn-rounded btn-outline-white btn-block btn-lg grey-gradient">Submit</button>
 
                             <div class="call">
                                 <p>Or would you prefer to call? <span class="cf-phone"><i class="fa fa-phone grey-text"></i>+01 234 565 280</span></p>
