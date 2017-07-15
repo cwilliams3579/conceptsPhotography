@@ -1,59 +1,52 @@
 <!--First container-->
 <div class="container-fluid pt-4">
 
+  <div id="home" class="container-fluid">
 
-    <div id="home" class="container-fluid">
+    <!--Second row-->
+    <div class="row">
+      <!--First column-->
+      <div class="col-md-12">
 
-                <!--First row-->
+        <!--Tiles blog-->
+        <div class="tiles-blog">
+          <!--First row-->
+          <div class="row">
+            <!--First column-->
+            <%  @galleries.each do |gallery| %>
+              <% gallery.images.each do |image| %>
+                <div class="col-xl-3 col-md-6 tiles-margins wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+                  <!--Single blog post-->
+                  <div class="tiles-blog-post waves-effect waves-light z-depth-1">
+                    <!--Blog post link-->
+                    <a href="#!">
+                      <!--Image-->
+                      <div class="tiles-image hm-zoom">
+                        <%= link_to image_tag(image.url, class: "img-fluid gallery-img"), gallery_path(gallery) %>
+                      </div>
+                      <!--/Image-->
+                    </a>
+                    <!--Blog post link-->
 
-                <!--/First row-->
-
-                <!--Second row-->
-                <div class="row">
-                    <!--First column-->
-                    <div class="col-md-12">
-
-                        <!--Tiles blog-->
-                        <div class="tiles-blog">
-                            <!--First row-->
-                            <div class="row">
-                                <!--First column-->
-                                <%  @galleries.each do |gallery| %>
-                                  <% gallery.images.each do |image| %>
-                                <div class="col-xl-3 col-md-6 tiles-margins wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
-                                    <!--Single blog post-->
-                                    <div class="tiles-blog-post waves-effect waves-light z-depth-1">
-                                        <!--Blog post link-->
-                                        <a href="#!">
-                                            <!--Image-->
-                                            <div class="tiles-image hm-zoom">
-
-                                              <%= link_to image_tag(image.url, class: "img-fluid gallery-img"), gallery_path(gallery) %>
-
-                                            </div>
-                                            <!--/Image-->
-                                        </a>
-                                        <!--Blog post link-->
-
-                                    </div>
-                                    <!--/Single blog post-->
-                                </div>
-                                <!--/First column-->
-                                <% end %>
-                              <% end %>
-
-                            </div>
-                            <!--/First row-->
-
-
-                        </div>
-                        <!--Tiles blog-->
-
-                    </div>
-                    <!--/First column-->
+                  </div>
+                  <!--/Single blog post-->
                 </div>
-                <!--/Second row-->
-            </div>
+                <!--/First column-->
+              <% end %>
+            <% end %>
+
+          </div>
+          <!--/First row-->
+
+
+        </div>
+        <!--Tiles blog-->
+
+      </div>
+      <!--/First column-->
+    </div>
+    <!--/Second row-->
+  </div>
 
   <!--Section: Wedding-->
   <section id="wedding" class="section">
