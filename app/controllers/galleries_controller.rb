@@ -58,9 +58,4 @@ end
     def gallery_params
       params.require(:gallery).permit(:title, :user_id, {images: []})
     end
-
-    def authorize_admin
-      return unless !current_user.admin?
-      redirect_to root_path, alert: 'You are not authorized to peform this action!'
-    end
 end
