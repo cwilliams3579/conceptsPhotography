@@ -21,10 +21,7 @@
               <div class="jumbotron grey-gradient">
                   <h2><a><%= @gallery.title %></a></h2>
                   <p>Uploaded <a><%= @gallery.created_at.strftime("%B %d %Y") %></p>
-                  <% @gallery.images.each_with_index do |image, index| %>
-                    <%= image_tag image.url, class: "gallery-show" %>
-                  <% end %>
-
+                
                   <!--Social shares-->
                   <div class="social-counters ">
 
