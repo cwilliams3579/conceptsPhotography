@@ -81,30 +81,29 @@
       <div class="col-md-12">
         <div id="mdb-lightbox-ui"></div>
         <!--Full width lightbox-->
-        <% @galleries.each do |gallery| %>
-          <% gallery.images.each_with_index do |image, index| %>
-            <div class="mdb-lightbox" data-pswp-uid="7">
-              <figure class="col-md-3">
-                <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(58).jpg" data-size="781x1172">
-                  <%= image_tag(image.url) %>
-                </a>
-              </figure>
+          <%  @galleries.each do |gallery| %>
+            <% gallery.images.each_with_index do |image, index| %>
+              <div class="mdb-lightbox" data-pswp-uid="7">
+                <figure class="col-md-3">
+
+                    <%= image_tag image.url, class: "img-fluid" %>
+
+                </figure>
             <% end %>
           <% end %>
-
-          <% Gallery.first(3).each do |gallery|  %>
+          <%  @galleries.each do |gallery| %>
+            <% gallery.images.each_with_index do |image, index| %>
           <figure class="col-md-4">
-            <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(66).jpg" data-size="1600x1067">
-              <%#= image_tag gallery.image_url, class: "img-fluid" if gallery.image? %>
-            </a>
+            <%= image_tag image.url, class: "img-fluid" %>
           </figure>
           <% end %>
-          <% Gallery.last(4).each do |gallery|  %>
+          <% end %>
+          <%  @galleries.each do |gallery| %>
+            <% gallery.images.each_with_index do |image, index| %>
             <figure class="col-md-3">
-              <a href="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(64).jpg" data-size="781x1172">
-                <%#= image_tag gallery.image_url, class: "img-fluid" if gallery.image? %>
-              </a>
+              <%= image_tag image.url, class: "img-fluid" %>
             </figure>
+          <% end %>
           <% end %>
         </div>
         <!--/Full width lightbox-->
