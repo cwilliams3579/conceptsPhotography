@@ -37,8 +37,14 @@
               <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-camera-retro"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i></a>
                   <div class="collapsible-body">
                       <ul>
-                          <li><a href="/galleries" class="waves-effect">Gallery</a>
+                          <li>
+                            <a href="/galleries" class="waves-effect">Gallery</a>
                           </li>
+                          <% if current_user && current_user.admin? %>
+                            <li>
+                              <a href="/galleries/new" class="waves-effect">Upload Pics</a>
+                            </li>
+                          <% end %>
                       </ul>
                   </div>
               </li>
