@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170715185823) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "images", default: "--- []\n"
+    t.string "image"
     t.index ["user_id"], name: "index_galleries_on_user_id"
   end
 
