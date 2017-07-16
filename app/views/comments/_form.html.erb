@@ -1,23 +1,26 @@
-<%= form_for([@comment, @post]) do |f| %>
-  <%# if @comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%#= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+<div class="container">
+  <%= form_for([@comment, @post]) do |f| %>
+    <%# if @comment.errors.any? %>
+      <div id="error_explanation">
+        <!-- <h2><%#= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2> -->
 
-      <ul>
-      <%# comment.errors.full_messages.each do |message| %>
-        <li><%#= message %></li>
-      <%# end %>
-      </ul>
+        <ul>
+        <%# comment.errors.full_messages.each do |message| %>
+          <li><%#= message %></li>
+        <%# end %>
+        </ul>
+      </div>
+    <%# end %>
+
+    <div class="md-form">
+      <%= f.label :content %>
+      <%= f.text_area :content, class: "md-textarea" %>
     </div>
-  <%# end %>
-
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content, id: :comment_content %>
-  </div>
 
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <div class="text-center">
+      <%= f.button  class: "btn btn-outline-white btn-lg btn-rounded grey-gradient", data: { disable_with: "<i class='fa fa-spinner fa-5x fa-spin'></i> Processing..."} %>
+    </div>
+  <% end %>
+
+</div>

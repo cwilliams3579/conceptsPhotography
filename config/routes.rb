@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations'}
   resources :galleries
   resources :posts do
-    resources :comments
+    resources :comments, only: [:new, :show]
   end
 end

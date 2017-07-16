@@ -18,9 +18,11 @@
           <% end %>
 
           <div class="md-form">
-            <i class="fa fa-camera-retro prefix fa-fonts"></i>
-            <%= image_tag(@post.image_url) if @post.image? %>
-            <%= f.file_field :image %>
+            <%= image_tag(@post.image_url) if @post.image? %><br>
+            <div class="text-center">
+              <i class="fa fa-camera-retro prefix fa-fonts"></i>
+              <%= f.file_field :image %>
+            </div>
             <%= f.hidden_field :image_cache %>
           </div>
 
