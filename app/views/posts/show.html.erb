@@ -24,7 +24,7 @@
 
 
           <!-- Article -->
-          <p>Proin tempor id mauris vulputate mattis. Vivamus venenatis felis sed libero posuere. A interdum augue porttitor. Suspendisse eleifend euismod purus vel tempus. Duis fermentum sapien a justo imperdiet cursus. Etiam porta metus odio.</p>
+          <p><%= @post.content %></p>
 
 
         </div>
@@ -35,94 +35,13 @@
 
       </section>
       <!--/ Section: Single article -->
+      
+      <hr class="between-sections wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
 
+      <%= render 'comments/comment' %>
 
-      <!--Section: Comments list-->
-      <section class="wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
-
-        <!--Main wrapper-->
-        <div class="comments-list">
-          <div class="section-heading">
-            <h1>Comments <span class="badge blue">3</span></h1>
-          </div>
-          <!--First row-->
-          <div class="row">
-            <!--Image column-->
-            <div class="col-sm-2 col-12">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(17).jpg">
-            </div>
-            <!--/.Image column-->
-
-            <!--Content column-->
-            <div class="col-sm-10 col-12">
-              <a><h3 class="user-name">Joanna Doe</h3></a>
-
-              <div class="card-data">
-                <ul>
-                  <li class="comment-date"><i class="fa fa-clock-o"></i> 27/06/2015</li>
-                </ul>
-              </div>
-
-              <p class="comment-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident.</p>
-              </div>
-              <!--/.Content column-->
-
-            </div>
-            <!--/.First row-->
-
-
-          </div>
-          <!--/.Main wrapper-->
-
-        </section>
-        <!--/Section: Comments list-->
 
         <hr class="between-sections wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
-
-        <!--Section: Leave a reply (Logged In User)-->
-        <section class="wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
-
-          <!--Leave a reply form-->
-          <div class="reply-form">
-            <h1 class="section-heading">Leave a reply </h1>
-            <p class="text-center">(<%= current_user.first_name.capitalize %>)</p>
-
-            <!--Third row-->
-            <div class="row">
-              <!--Image column-->
-              <div class="col-sm-2 col-12">
-                <%= image_tag @post.image, class: "img-fluid" %>
-              </div>
-              <!--/.Image column-->
-
-              <!--Content column-->
-              <div class="col-sm-10 col-12">
-                <div class="md-form">
-                  <textarea type="text" id="form8" class="md-textarea"></textarea>
-                  <label for="form8">Your message</label>
-                </div>
-
-              </div>
-
-              <div class="text-center">
-                <button class="btn btn-mdb waves-effect waves-light">Submit</button>
-              </div>
-              <!--/.Content column-->
-
-            </div>
-            <!--/.Third row-->
-          </div>
-          <!--/.Leave a reply form-->
-
-        </section>
-        <!--/Section: Leave a reply (Logged In User)-->
-
-        <hr class="between-sections wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
-
-        <!--Section: Leave a reply (Not Logged In User)-->
-
-        <!--/Section: Leave a reply (Not Logged In User)-->
 
       </div>
       <!--/ Main news -->
