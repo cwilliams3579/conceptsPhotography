@@ -110,11 +110,11 @@
                     <div class="col-md-6 mb-3 wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
 
                         <!--Card-->
+                        <%= link_to image_tag post.image_url, class: "image-fluid", style: "width: 100%;" %>
                         <div class="card">
 
                             <!--Card image-->
                             <div class=" overlay hm-white-slight">
-                                <%= link_to image_tag post.image_url, class: "image-fluid", style: "width: 100%;" %>
                                 <a>
                                     <div class="mask waves-effect waves-light"></div>
                                 </a>
@@ -151,10 +151,10 @@
 
                         </div>
                         <!--/Card-->
+                        <% end %>
 
                     </div>
                     <!--First column-->
-                    <% end %>
                 </div>
                 <!--/First row-->
             </div>
