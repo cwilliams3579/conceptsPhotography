@@ -10,6 +10,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
+gem 'rack-cors', :require => 'rack/cors'
 gem 'devise'
 gem 'cancancan'
 gem "carrierwave", :github => 'carrierwaveuploader/carrierwave'
@@ -18,8 +19,10 @@ gem 'mini_magick'
 gem 'figaro'
 gem 'friendly_id'
 gem 'searchkick'
-gem 'kaminari'
-gem 'bootstrap-kaminari-views'
+gem 'meta-tags'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'will_paginate-bootstrap'
+gem 'rails_admin'
 gem 'jbuilder', '~> 2.5'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -28,6 +31,10 @@ group :development, :test do
 end
 group :development do
   gem 'hirb'
+  gem 'guard'
+  gem 'guard-bundler', require: false
+  gem 'guard-rails', require: false
+  gem 'guard-livereload', '~> 2.5', require: false
   gem 'capistrano'
   gem 'capistrano3-puma'
   gem 'capistrano-rails', require: false
