@@ -47,17 +47,12 @@
   margin-top: 30px !important;
 }
 
-.index-img-btm, .index-img-top {
-  height: 300px !important;
-}
-
 .psh-btm {
   margin-bottom: 60px !important;
 }
 
 .footer-streak {
-  bottom: 0 !important;
-  position: absolute;
+  margin-top: 150px !important;
 }
 
 .gallery-img {
