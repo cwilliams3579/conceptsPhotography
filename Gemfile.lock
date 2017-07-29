@@ -244,7 +244,7 @@ GEM
     public_suffix (2.0.5)
     puma (3.9.1)
     rack (2.0.3)
-    rack-cors (1.0.0)
+    rack-cors (1.0.1)
     rack-pjax (1.0.0)
       nokogiri (~> 1.5)
       rack (>= 1.1)
@@ -417,4 +417,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.15.2
+   1.15.3
