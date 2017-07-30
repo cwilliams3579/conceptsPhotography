@@ -1,6 +1,5 @@
-
-
- <div class="row cover-photo wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+<div class="container-fluid">
+  <div class="row cover-photo wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
   <div class="col-md-12">
 
     <!-- Image -->
@@ -9,8 +8,9 @@
     </div>
   </div>
 </div>
+ </div>
 <section id="models" class="section without-margin">
-   <h1 class="section-heading pt-4 pb-2 white-text wow speedIn animated"><i class="fa fa-camera-retro" aria-hidden="true"></i> Conceived Concepts <i class="fa fa-camera-retro" aria-hidden="true"></i></h1>
+  <!-- <h1 class="section-heading pt-4 pb-2 white-text wow speedIn animated"><i class="fa fa-camera-retro" aria-hidden="true"></i> Conceived Concepts <i class="fa fa-camera-retro" aria-hidden="true"></i></h1> -->
   <!--First row-->
   <div class="row wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
     <!--First column-->
@@ -105,7 +105,7 @@
           <!--First row-->
           <div class="row">
             <!--First column-->
-            <%  @galleries.each do |gallery| %>
+            <% @galleries.each do |gallery| %>
               <% gallery.images.each do |image| %>
                 <div class="col-xl-3 col-md-6 tiles-margins wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
                   <!--Single blog post-->

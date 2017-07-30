@@ -143,7 +143,7 @@
                                 <h4 class="card-title"><%= link_to(post.title, post_path(post)) %></h4>
                                 <hr>
                                 <!--Text-->
-                                <p class="black-text font-thin"><%= post.content %></p>
+                                <p class="black-text font-thin"><%= truncate(post.content, escape: false, length: 250) %></p>
                                 <div class="text-center">
                                     <%= link_to 'Read More', post, :class => 'btn btn-outline-white grey-gradient' %>
                                 </div>
