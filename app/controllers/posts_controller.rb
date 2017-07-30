@@ -49,6 +49,9 @@ class PostsController < ApplicationController
   private
     def set_post
       @post = Post.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+      flash[:alert] = "The post you were looking for could be found!"
+      redirect_to(request.referrer || posts_url)
     end
 
     def post_params

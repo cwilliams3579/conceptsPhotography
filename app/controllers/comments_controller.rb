@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(comment_params)
+    @comment = Comment.build(comment_params)
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
@@ -53,6 +53,9 @@ class CommentsController < ApplicationController
   private
     def set_comment
       @comment = Comment.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+      flash[:alert] = "The category you were looking for could be found."
+      redirect_to(request.referrer || posts_url)
     end
 
     def comment_params

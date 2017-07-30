@@ -1,11 +1,5 @@
 .navbar-brand {
-  // font-family: 'Lobster', cursive;
   font-size: 1.4em !important;
-
-}
-
-.nav-fonts{
-  // font-family: 'Lobster', cursive !important;
 }
 
 .fa-bars {
@@ -18,28 +12,24 @@
 }
 
 .side-nav .logo-wrapper img {
-    padding: 0px !important;
+  padding: 0px !important;
 }
 
 .page-footer {
-    // background-image: url("https://github.com/coneivedconcepts/screenshots/blob/master/logo%20gRadient.jpg?raw=true") !important;
-    width: 100% !important;
-    height: 200px;
-    background-size: 100% 60vh !important;
-    background-repeat: no-repeat !important;
+  width: 100% !important;
+  height: 200px;
+  background-size: 100% 60vh !important;
+  background-repeat: no-repeat !important;
 }
 
-.card {
-  // background-image: url("https://github.com/coneivedconcepts/screenshots/blob/master/logo%20gRadient.jpg?raw=true") !important;
-  // background-size: 100% 70vh !important;
-  // background-repeat: no-repeat !important;
-  .form-control {
-    border-bottom-color: #fff;
-  }
-  .form-control:active {
-    border-bottom-color: red;
-  }
+.card .form-control {
+  border-bottom-color: #fff;
 }
+
+.card .form-control:active {
+  border-bottom-color: red;
+}
+
 .gallery-img {
   height: 15vh;
 }
@@ -47,7 +37,6 @@
 .sm-pic {
   width: 25px !important;
   border-radius: 20px !important;
-
 }
 
 .center {
@@ -58,15 +47,11 @@
   margin-top: 30px !important;
 }
 
-
 .psh-btm {
   margin-bottom: 60px !important;
 }
 
-  .footer-streak {
-  // bottom: 0 !important;
-  // position: absolute;
-  // // bottom: 0;
+.footer-streak {
   margin-top: 150px !important;
 }
 
@@ -103,5 +88,4 @@
 
 .ga-index {
   height: 650px !important;
-
 }

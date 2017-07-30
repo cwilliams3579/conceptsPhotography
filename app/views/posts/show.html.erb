@@ -1,37 +1,40 @@
 <div class="container">
-
   <!-- Magazine -->
   <div class="row">
     <!-- Main news -->
     <div class="col-md-12">
-
       <!-- Section: Single article -->
       <section class="article-section">
-
         <!-- Image -->
         <div class="view overlay hm-white-light z-depth-2 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+        <% if @post.image? %>
           <%= image_tag @post.image, class: "img-fluid" %>
+        <% else %>
+          <img src="https://www.pfsuites.com/images/no_image_available.png" class="image-fluid hm-zoom" style="width: 100%; height: 625px;" alt="Empty Image">
+        <% end %>
           <a>
             <div class="mask waves-light waves-effect waves-light"></div>
           </a>
         </div>
-
+        <br>
         <div class="article-text wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
           <!-- Post data -->
           <h1 class="h1-responsive text-center"><%= @post.title %></h1>
 
-          <h5 class="text-center ">By<a href="" class="white-text"><strong> <%= @post.user.full_name.titleize %></strong></a> on <%= @post.created_at.strftime("%B %d %Y") %> </h5>
+          <h5 class="text-center ">By<a href="" class="white-text"><strong> <%=     @post.user.full_name.titleize %></strong></a> on <%= @post.created_at.strftime("%B  %d %Y") %> &nbsp; &nbsp; &nbsp;
+          <% if current_user.admin || user_signed_in? %>
+           <%= link_to '', edit_post_path(@post), data: {confirm: "Are you sure?",  content: 'Edit', placement: 'top', trigger: 'hover'}, class: "fa fa-pencil fa-lg white-text" %> &nbsp;
+           <%= link_to '', post_path(@post), method: :delete, data: {confirm: "Are you sure?",  content: 'Delete', placement: 'top', trigger: 'hover'}, class: "fa fa-trash fa-lg white-text" %> 
+          <% end %>
+          </h5>
 
 
           <!-- Article -->
-          <p><%= @post.content %></p>
+          <p><%= simple_format(@post.content) %></p>
 
 
         </div>
 
-        <!-- Article footer -->
-
-        <!--/ Article footer -->
 
       </section>
       <!--/ Section: Single article -->
@@ -50,5 +53,5 @@
     <!--/ Magazine -->
 
   </div>
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-  <%= link_to 'Back', posts_path %>
+ 
+  <%= link_to '', posts_path, class: "fa fa-hand-o-left fa-2x grey-text" %>

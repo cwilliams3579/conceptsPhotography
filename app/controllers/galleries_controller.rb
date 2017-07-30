@@ -53,6 +53,9 @@ end
   private
     def set_gallery
       @gallery = Gallery.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+      flash[:alert] = "The image you were looking for could be found!"
+      redirect_to(request.referrer || galleries_url)
     end
 
     def gallery_params
