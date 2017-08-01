@@ -10,7 +10,11 @@
               <!--Featured image-->
               <div class="view overlay hm-white-slight">
                 <% @gallery.images.each_with_index do |image, index| %>
+                <% if @gallery.images? %>
                   <%= image_tag image.url, class: "gallery-show" %>
+                <% else %>
+                    <img src="https://www.pfsuites.com/images/no_image_available.png" class="image-fluid hm-zoom" style="width: 100%;" alt="Empty Image">
+                <% end %>
                   <a>
                       <div class=""></div>
                   </a>
@@ -74,6 +78,4 @@
 
 </div>
 
-
-<%#= link_to '', galleries_path, class: "fa fa-hand-o-left fa-2x white-text" %>
-<%#= link_to '', edit_gallery_path(@gallery), class: "fa fa-pencil fa-2x white-text" %>
+<%= link_to '', galleries_path, class: "fa fa-hand-o-left fa-2x faa-horizontal animated grey-text-gradient" %>

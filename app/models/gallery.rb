@@ -6,8 +6,9 @@ class Gallery < ApplicationRecord
 
   private
     def image_size
-      if images.size > 10.megabytes
-        errors.add(:images, "Should be less than 10MB")
+      if images.size > 5.megabytes
+        errors.add(:images, "Should be less than 5MB")
       end
     end
+  default_scope -> { order(updated_at: :desc) }
 end

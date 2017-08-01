@@ -112,7 +112,11 @@
                     <a href="#!">
                       <!--Image-->
                       <div class="tiles-image hm-zoom">
+                      <% if gallery.images? %>
                         <%= link_to image_tag(image.url, class: "img-fluid gallery-img"), gallery_path(gallery) %>
+                        <% else %>
+                            <img src="https://www.pfsuites.com/images/no_image_available.png" class="image-fluid hm-zoom" style="width: 100%;" alt="Empty Image">
+                        <% end %>
                       </div>
                       <!--/Image-->
                     </a>
@@ -140,7 +144,10 @@
 
 </div>
 <!--/First container-->
-</div>
+</div> <br> <br>
+
+    <%= will_paginate @galleries, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+<br>
 <div class="mx-auto center">
   <%= link_to 'Upload New Image', new_gallery_path, class: "btn btn-rounded btn-outline-white grey-gradient white-text" %>
 </div>

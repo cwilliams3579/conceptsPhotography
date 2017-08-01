@@ -120,3 +120,24 @@
 .fa-twitter:hover {
   color: #00ACED;
 }
+
+.grey-text-gradient {
+  font-size: 72px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: .25rem;
+  margin: 0 auto;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+}

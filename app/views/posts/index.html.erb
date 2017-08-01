@@ -163,8 +163,7 @@
             <!--Pagination dark grey-->
             <nav>
                <ul class="pagination pg-darkgrey flex-center mt-2 mb-5">
-                   <%#= paginate @posts, :theme => 'twitter-bootstrap-3',
-                   :pagination_class => "pagination-sm" %>
+                   <%= will_paginate @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
                </ul>
             </nav>
             <!--/Pagination dark grey-->

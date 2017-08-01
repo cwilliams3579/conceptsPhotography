@@ -21,7 +21,7 @@ gem 'friendly_id'
 gem 'searchkick'
 gem 'meta-tags'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
-gem 'will_paginate-bootstrap'
+gem 'will_paginate-bootstrap4'
 gem 'rails_admin'
 gem 'jbuilder', '~> 2.5'
 group :development, :test do
