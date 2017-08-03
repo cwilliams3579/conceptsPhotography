@@ -160,15 +160,15 @@
             </div>
             <!--/Newsfeed-->
 
+        </div>
             <!--Pagination dark grey-->
             <nav>
                <ul class="pagination pg-darkgrey flex-center mt-2 mb-5">
                    <%= will_paginate @posts %>
                </ul>
             </nav>
+            </div> <br> <br>
             <!--/Pagination dark grey-->
-
-        </div>
 	<div class="center">
 	   <%= link_to 'New Post', new_post_path, class: "btn btn-outline-white btn-rounded grey-gradient white-text" %>
 	</div>
