@@ -146,7 +146,7 @@
 <!--/First container-->
 </div> <br> <br>
 
-    <%= will_paginate @galleries, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    <%= will_paginate @galleries %>
 <br>
 <div class="mx-auto center">
   <%= link_to 'Upload New Image', new_gallery_path, class: "btn btn-rounded btn-outline-white grey-gradient white-text" %>
