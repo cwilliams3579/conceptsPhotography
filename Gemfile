@@ -51,6 +51,7 @@ gem 'high_voltage'
 gem 'jquery-rails'
 group :development do
   gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'hub', :require=>nil
   gem 'rails_layout'
 end

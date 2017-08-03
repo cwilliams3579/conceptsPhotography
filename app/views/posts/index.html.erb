@@ -97,76 +97,62 @@
                 <h2 class="h2-responsive">What's new?</h2>
             </div>
 
-            <!--Newsfeed-->
-            <div class="newsfeed">
+           <div class="row">
+                    <% Post.all.each do |post| %>
+                    <div class="col-lg-4 col-sm-12 mb-1">
+                       
+                        <!-- Card -->
+                        <div class="card card-cascade wider">
 
-                <!--First row-->
-                <div class="row">
-
-                  <% Post.all.each do |post| %>
-                    <!--First column-->
-                    <div class="col-md-6 mb-3 wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
-
-                        <!--Card-->
-                        <% if post.image? %>
+                            <!-- Card image -->
+                            <div class="view overlay hm-white-slight">
+                               <% if post.image? %>
                             <%= link_to image_tag post.image_url, class: "image-fluid hm-zoom", style: "width: 100%;" if post.image? %>
                         <% else %>
                             <img src="https://www.pfsuites.com/images/no_image_available.png" class="image-fluid hm-zoom" style="width: 100%;" alt="Empty Image">
                         <% end %>
-                        <div class="card">
-
-                            <!--Card image-->
-                            <div class=" overlay hm-white-slight">
-                                <a>
-                                    <div class="mask waves-effect waves-light"></div>
+                                <a href="#">
+                                    <div class="mask waves-light waves-effect waves-light"></div>
                                 </a>
                             </div>
-                            <!--/Card image-->
+                            <!-- /.Card image -->
 
-                            <!--Social buttons-->
-                            <div class="card-share">
-                                <div class="social-reveal">
-                                    <!--Facebook-->
-                                    <a type="button" class="btn-floating btn-fb waves-effect waves-light"><i class="fa fa-facebook"></i></a>
-                                    <!--Twitter-->
-                                    <a type="button" class="btn-floating btn-tw waves-effect waves-light"><i class="fa fa-twitter"></i></a>
-                                    <!--Google -->
-                                    <a type="button" class="btn-floating btn-gplus waves-effect waves-light"><i class="fa fa-google-plus"></i></a>
+                            <!-- Card content -->
+                            <div class="card-block text-center">
+                               
+                                <!-- Title -->
+                                <h4 class="card-title"><strong><a href=""><%= link_to(post.title, post_path(post), class: "white-text") %></a></strong></h4>
+
+                                <!-- Description -->
+                                <p class="card-text white-text">
+                                    <%= truncate(post.content, escape: false, length: 250) %>
+                                </p>
+
+                                <!-- Card footer -->
+                                <div class="card-footer">
+                                    <span class="left"></span>
+                                    <span class="right">
+                                    <%=  link_to '', post, data: {content: 'Quick Look', placement: 'top', trigger: 'hover'}, class: "fa fa-eye  white-text" %>
+                                    <%=  link_to '', post, data: {content: 'Like', placement: 'top', trigger: 'hover'}, :class => 'fa fa-thumbs-up white-text' %>
+                                    </span>
                                 </div>
-                                <a class="btn-floating btn-action share-toggle float-right waves-effect waves-light"><i class="fa fa-share-alt"></i></a>
-                            </div>
-                            <!--/Social buttons-->
 
-                            <!--Card content-->
-                            <div class="card-block">
-                                <!--Title-->
-                                <h4 class="card-title"><%= link_to(post.title, post_path(post)) %></h4>
-                                <hr>
-                                <!--Text-->
-                                <p class="black-text font-thin"><%= truncate(post.content, escape: false, length: 250) %></p>
-                                <div class="text-center">
-                                    <%= link_to 'Read More', post, :class => 'btn btn-outline-white grey-gradient' %>
-                                </div>
                             </div>
-                            <!--/Card content-->
-                        </div>
-                        <!--/Card-->
+                            <!-- /.Card content -->
 
-                    </div>
-                    <!--First column-->
-                        <% end %>
+                        </div> <br>
+                        <!-- /.Card -->
+                        
+                    </div> <br>
+                    <% end %>
                 </div>
-                <!--/First row-->
-            </div>
-            <!--/Newsfeed-->
-
         </div>
             <!--Pagination dark grey-->
             <div class="flickr_pagination">
                 <div class="page_info">
-                    <%= page_entries_info @posts %>
+                    <%#= page_entries_info @posts %>
                 </div>
-                <%= will_paginate @posts %>
+                <%#= will_paginate @posts %>
             </div> <br> <br>
             <!--/Pagination dark grey-->
 	<div class="center">

@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @posts = Post.all
+    @comments = Comment.where(post_id: @post).order("created_at DESC")
   end
 
   def new

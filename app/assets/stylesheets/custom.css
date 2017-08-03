@@ -291,3 +291,15 @@
 .flickr_pagination .next_page {
   margin-left: 1em;
 }
+
+.card-cascade.narrower {
+  margin-top: 20px;
+}
+
+.card-cascade {
+  display: inline-block;
+}
+
+.card {
+  border: 0;
+}

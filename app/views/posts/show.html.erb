@@ -1,7 +1,7 @@
 <div class="container">
   <!-- Magazine -->
   <div class="row">
-    <!-- Main news -->
+    <!-- Main  -->
     <div class="col-md-12">
       <!-- Section: Single article -->
       <section class="article-section">
@@ -27,8 +27,6 @@
            <%= link_to '', post_path(@post), method: :delete, data: {confirm: "Are you sure?",  content: 'Delete', placement: 'top', trigger: 'hover'}, class: "fa fa-trash fa-lg white-text" %> 
           <% end %>
           </h5>
-
-
           <!-- Article -->
           <p><%= simple_format(@post.content) %></p>
 
@@ -47,8 +45,8 @@
         <hr class="between-sections wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
 
       </div>
-      <!--/ Main news -->
-
+      <!--/ Main  -->
+      <%= render 'comments/form' %>
     </div>
     <!--/ Magazine -->
 
