@@ -146,8 +146,13 @@
 <!--/First container-->
 </div> <br> <br>
 
-    <%= will_paginate @galleries, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
-<br>
+      <!--Pagination dark grey-->
+            <div class="flickr_pagination">
+                <div class="page_info">
+                    <%= page_entries_info @posts %>
+                </div>
+                <%= will_paginate @posts %>
+            </div> <br> <br>
 <div class="mx-auto center">
   <%= link_to 'Upload New Image', new_gallery_path, class: "btn btn-rounded btn-outline-white grey-gradient white-text" %>
 </div>

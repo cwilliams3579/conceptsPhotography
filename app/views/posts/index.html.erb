@@ -160,15 +160,15 @@
             </div>
             <!--/Newsfeed-->
 
-            <!--Pagination dark grey-->
-            <nav>
-               <ul class="pagination pg-darkgrey flex-center mt-2 mb-5">
-                   <%= will_paginate @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
-               </ul>
-            </nav>
-            <!--/Pagination dark grey-->
-
         </div>
+            <!--Pagination dark grey-->
+            <div class="flickr_pagination">
+                <div class="page_info">
+                    <%= page_entries_info @posts %>
+                </div>
+                <%= will_paginate @posts %>
+            </div> <br> <br>
+            <!--/Pagination dark grey-->
 	<div class="center">
 	   <%= link_to 'New Post', new_post_path, class: "btn btn-outline-white btn-rounded grey-gradient white-text" %>
 	</div>
