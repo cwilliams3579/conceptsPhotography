@@ -1,18 +1,19 @@
-
 <!--Section: Comments list-->
 <section class="wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
 
   <!--Main wrapper-->
   <div class="comments-list">
     <div class="section-heading">
-      <h1>Comments <span class="badge white-text grey-gradient"><%= @post.comments.count %></span></h1>
+      <%= link_to 'Comments', "#", id: "comments-link" %> <span class="badge white-text grey-gradient"><%= @post.comments.count %></span>
     </div>
-    <!--First row-->
+    <div id="comments-section">
+      <div id="comments">
+           <!--First row-->
     <% @comments.each do |comment| %>
       <div class="row">
         <!--Image column-->
         <div class="col-sm-2 col-12">
-          <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(17).jpg">
+          <%= gravatar_for(comment.user, size: 150) %>
         </div>
         <!--/.Image column-->
 
@@ -22,19 +23,21 @@
 
           <div class="card-data">
             <ul>
-              <li class="comment-date"><i class="fa fa-clock-o white-text"></i>
-                <%= time_ago_in_words(comment.created_at) %>
+              <li class="comment-date pr-txt"><i class="fa fa-clock-o white-text"></i>
+                <%= time_ago_in_words(comment.created_at) %> ago
+                <%= link_to '', [comment.post, comment], method: :delete, data: {content: 'Delete', placement: 'top', trigger: 'hover'}, :remote => true, class: "delete_comment fa fa-trash fa-lg text-danger" %>
               </li>
             </ul>
           </div>
 
-          <p class="comment-text"><%= simple_format(comment.content) %></p>
+          <p class="comments-text"><%= simple_format(comment.content) %></p>
         </div>
         <!--/.Content column-->
-        <%= link_to '', posts_path(@post.comments), method: :delete, data: {confirm: 'Are you sure?', class: "fa fa-trash text-danger"} %>
       </div>
       <!--/.First row-->
     <% end %>
+      </div>
+    </div>
 
   </div>
   <!--/.Main wrapper-->
@@ -48,7 +51,7 @@
 
   <!--Leave a reply form-->
   <div class="reply-form">
-    <h1 class="section-heading">Leave a reply </h1>
+    <h1 class="section-heading">Post a comment </h1>
     <p class="text-center">(<%= current_user.first_name.capitalize %>)</p>
 
     <!--Third row-->
@@ -58,6 +61,16 @@
         <%= image_tag current_user.image.url, class: "img-fluid" if current_user.image? %>
       </div>
       <!--/.Image column-->
+  <div class="container">
+    <%= form_for([@post, @post.comments.build], remote: true ) do |f| %>
+        <div class="md-form">
+          <%= f.text_area :content, class: "md-textarea white-text" %>
+        </div>
+        <div class="text-center">
+        <%= f.submit  class: "btn btn-outline-white btn-lg btn-rounded grey-gradient", id: "btn-comment", remote: true %>
+      </div>
+    <% end %>
+</div>
 
     </div>
     <!--/.Third row-->

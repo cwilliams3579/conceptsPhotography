@@ -29,27 +29,16 @@
           </h5>
           <!-- Article -->
           <p><%= simple_format(@post.content) %></p>
-
-
         </div>
-
-
       </section>
       <!--/ Section: Single article -->
-      
       <hr class="between-sections wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
-
       <%= render 'comments/comment' %>
-
-
-        <hr class="between-sections wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
-
       </div>
       <!--/ Main  -->
-      <%= render 'comments/form' %>
+      
     </div>
     <!--/ Magazine -->
-
   </div>
  
   <%= link_to '', posts_path, class: "fa fa-hand-o-left fa-2x grey-text" %>

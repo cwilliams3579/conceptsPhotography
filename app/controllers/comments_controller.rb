@@ -1,23 +1,40 @@
 class CommentsController < ApplicationController
-  before_action :find_post
   before_action :authenticate_user!
 
+  def new
+    @comment = Comment.new
+  end
+
   def create
-    @comment = @post.comments.create(params[:comment].permit(:content))
-    @comment.user_id = current_user.id
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.build(comment_params)
+    @comment.user = current_user
+
     if @comment.save
-      redirect_to post_path(@post)
+
+      respond_to do |format|
+        format.html { redirect_to @post }
+        format.js # render comments/create.js.erb
+      end
     else
-      render 'new'
+      flash[:danger] = "Opps something went wrong!"
+      redirect_to root_url
     end
   end
 
-  private
-    def find_post
-      @post = Post.find(params[:post_id])
-      rescue ActiveRecord::RecordNotFound
-      flash[:alert] = "The page you were looking for could be found."
-      redirect_to(request.referrer || posts_url)
-    end
+  #   def destroy
+#     # @comment = Comment.find(params[:id])
+#     @comment.destroy
+#     respond_to do |format|
+#       format.html { redirect_to post_path(@post) }
+#       format.json { head :no_content }
+#       format.js   { render :layout => false }
+#     end
+#   end
 
+  private
+
+  def comment_params
+    params.require(:comment).permit(:content, :user_id, :post_id)
+  end
 end
