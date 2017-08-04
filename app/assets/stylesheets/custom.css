@@ -1,6 +1,5 @@
 .navbar-brand {
   font-size: 1.4em !important;
-
 }
 
 .fa-bars {
@@ -13,20 +12,17 @@
 }
 
 .side-nav .logo-wrapper img {
-    padding: 0px !important;
+  padding: 0px !important;
 }
 
-.card {
-  // background-image: url("https://github.com/coneivedconcepts/screenshots/blob/master/logo%20gRadient.jpg?raw=true") !important;
-  // background-size: 100% 70vh !important;
-  // background-repeat: no-repeat !important;
-  .form-control {
-    border-bottom-color: #fff;
-  }
-  .form-control:active {
-    border-bottom-color: red;
-  }
+.card .form-control {
+  border-bottom-color: #fff;
 }
+
+.card .form-control:active {
+  border-bottom-color: red;
+}
+
 .gallery-img {
   height: 15vh;
 }
@@ -34,7 +30,6 @@
 .sm-pic {
   width: 25px !important;
   border-radius: 20px !important;
-
 }
 
 .center {
@@ -49,10 +44,7 @@
   margin-bottom: 60px !important;
 }
 
-  .footer-streak {
-  // bottom: 0 !important;
-  // position: absolute;
-  // // bottom: 0;
+.footer-streak {
   margin-top: 150px !important;
 }
 
@@ -96,7 +88,7 @@
 }
 
 .fa-instagram:hover {
-  color: rgb(248, 50, 88);
+  color: #f83258;
 }
 
 .fa-pinterest:hover {
@@ -127,8 +119,6 @@
   align-items: center;
   justify-content: center;
 }
-
-// Pagination ======================================
 
 .digg_pagination {
   background: white;
@@ -197,7 +187,7 @@
   height: 1%;
 }
 
-*:first-child+html .digg_pagination {
+*:first-child + html .digg_pagination {
   overflow: hidden;
 }
 
@@ -311,17 +301,16 @@
   display: none;
 }
 
-    .page-footer .footer-copyright {
+.page-footer .footer-copyright {
   overflow: hidden;
   height: 50px;
   line-height: 50px;
-  color: rgba(255, 255, 255, .6);
-  background-color: rgba(0, 0, 0, .2);
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(0, 0, 0, 0.2);
   text-align: center;
   font-size: .9rem;
   bottom: 0;
-  // position: absolute;
   left: 0;
   height: 200px;
   right: 0;
-  }
+}

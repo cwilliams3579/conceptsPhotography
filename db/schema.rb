@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170803222557) do
+ActiveRecord::Schema.define(version: 20170804011707) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20170803222557) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "images", default: "--- []\n"
+    t.string "slug"
+    t.index ["slug"], name: "index_galleries_on_slug", unique: true
     t.index ["user_id"], name: "index_galleries_on_user_id"
   end
 

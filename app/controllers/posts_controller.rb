@@ -7,8 +7,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @posts = Post.all
+    @comments = Comment.all
     @comments = Comment.where(post_id: @post).order("created_at DESC")
+    @comments = @post.comments.paginate(page: params[:page], per_page: 3)
   end
 
   def new
@@ -51,7 +52,7 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.friendly.find(params[:id])
       rescue ActiveRecord::RecordNotFound
-      flash[:alert] = "The post you were looking for could be found!"
+      flash[:alert] = "The page you were looking for could be found!"
       redirect_to(request.referrer || posts_url)
     end
 

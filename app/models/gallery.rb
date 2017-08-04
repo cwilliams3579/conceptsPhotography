@@ -1,4 +1,6 @@
 class Gallery < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: :slugged
   belongs_to :user
   mount_uploaders :images, ImageUploader
   validate :image_size
