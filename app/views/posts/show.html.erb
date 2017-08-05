@@ -21,7 +21,7 @@
           <!-- Post data -->
           <h1 class="h1-responsive text-center"><%= @post.title %></h1>
 
-          <h5 class="text-center ">By<a href="" class="white-text"><strong> <%=     @post.user.full_name.titleize %></strong></a> on <%= @post.created_at.strftime("%B  %d %Y") %> &nbsp; &nbsp; &nbsp;
+          <h5 class="text-center ">By<a href="" class="white-text"><strong> <%= @post.user.full_name.titleize %></strong></a> on <%= @post.created_at.strftime("%B  %d %Y") %> &nbsp; &nbsp; &nbsp;
           <% if current_user || current_user.admin %>
            <%= link_to '', edit_post_path(@post), data: {content: 'Edit', placement: 'top', trigger: 'hover'}, class: "fa fa-pencil fa-lg white-text" %> &nbsp;
            <%= link_to '', post_path(@post), method: :delete, data: {confirm: "Are you sure?",  content: 'Delete', placement: 'top', trigger: 'hover'}, class: "fa fa-trash fa-lg white-text" %> 
@@ -31,8 +31,10 @@
           <p><%= simple_format(@post.content) %></p>
         </div>
       </section>
-      <!--/ Section: Single article -->
-      <hr class="between-sections wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+      <div class="section-heading">
+      <%= link_to 'Comments', "#", id: "comments-link" %> <span class="badge white-text grey-gradient"><%= @post.comments.count %></span>
+    </div>
+      <br>
       <%= render @comments %>
       </div>
       <!--/ Main  -->
@@ -49,16 +51,16 @@
     <div class="row">
       <!--Image column-->
       <div class="col-sm-2 col-12">
-        <%#= gravatar_for(@comments.user, size: 150) %>
+        <%= gravatar_for(current_user, size: 150) %>
       </div>
       <!--/.Image column-->
   <div class="container">
-    <%= form_for([@post, @post.comments.new], remote: true ) do |f| %>
+    <%= form_for([@post, @post.comments.build], remote: true) do |f| %>
         <div class="md-form">
           <%= f.text_area :content, class: "md-textarea white-text" %>
         </div>
         <div class="text-center">
-        <%= f.submit  class: "btn btn-outline-white btn-lg btn-rounded grey-gradient", id: "btn-comment" %>
+        <%= f.submit  class: "btn btn-outline-white btn-lg btn-rounded grey-gradient" %>
       </div>
     <% end %>
 </div>

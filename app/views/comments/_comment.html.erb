@@ -3,13 +3,12 @@
 
   <!--Main wrapper-->
   <div class="comments-list">
-    <div class="section-heading">
-      <%= link_to 'Comments', "#", id: "comments-link" %> <span class="badge white-text grey-gradient"><%= @post.comments.count %></span>
-    </div>
+    
     <div id="comments-section">
-      <div id="comments">
-        
-      </div>
+      <div id="comments"></div>
+        <% Comment.all.each do |comment| %>
+          <%= simple_format(comment.content) %>
+        <% end %>
       
     </div>
 
