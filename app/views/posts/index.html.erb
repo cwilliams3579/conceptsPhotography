@@ -95,59 +95,55 @@
             <div class="divider-new wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
                 <h2 class="h2-responsive">What's new?</h2>
             </div>
-
-           <div class="row">
                     <% Post.all.each do |post| %>
-                    <div class="col-lg-4 col-sm-12 mb-1">
-                       
-                        <!-- Card -->
-                        <div class="card card-cascade wider">
+                    <div class="row white-text">
 
-                            <!-- Card image -->
-                            <div class="view overlay hm-white-slight">
-                               <% if post.image? %>
+                <!--Grid column-->
+                <div class="col-lg-5 ml-auto col-xl-4 pb-3">
+                    <!--Featured image-->
+                    <div class="view overlay hm-white-slight z-depth-1-half">
+                        <% if post.image? %>
                             <%= link_to image_tag post.image_url, class: "image-fluid hm-zoom", style: "width: 100%;" if post.image? %>
                         <% else %>
                             <img src="https://www.pfsuites.com/images/no_image_available.png" class="image-fluid hm-zoom" style="width: 100%;" alt="Empty Image">
                         <% end %>
-                                <a href="#">
-                                    <div class="mask waves-light waves-effect waves-light"></div>
-                                </a>
-                            </div>
-                            <!-- /.Card image -->
-
-                            <!-- Card content -->
-                            <div class="card-block text-center">
-                               
-                                <!-- Title -->
-                                <h4 class="card-title"><strong><a href=""><%= link_to(post.title, post_path(post), class: "white-text") %></a></strong></h4>
-
-                                <!-- Description -->
-                                <p class="card-text white-text">
-                                    <%= truncate(post.content, escape: false, length: 250) %>
-                                </p>
-
-                                <!-- Card footer -->
-                                <div class="card-footer">
-                                    <span class="left likes-count badge grey-gradient">Likes <%= post.get_upvotes.size %></span>
-                                    <span class="right">
-                                    <%=  link_to '', post, data: {content: 'Quick Look', placement: 'top', trigger: 'hover'}, class: "fa fa-eye  white-text" %>
-                                    </span>
-                                </div>
-
-                            </div>
-                            <!-- /.Card content -->
-
-                        </div> <br>
-                        <!-- /.Card -->
-                        
-                    </div> <br>
-                    <% end %>
+                        <a>
+                            <div class="mask waves-effect waves-light"></div>
+                        </a>
+                    </div>
                 </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-7 mr-auto col-xl-6">
+                    <!--Excerpt-->
+                    <a href="" class="green-text"><h6 class="font-bold pb-1"><i class="fa fa-tags"></i> Food</h6></a>
+                    <h4 class="h4-responsive"><strong><%= link_to(post.title, post_path(post)) %></strong></h4>
+                    
+
+                    <p><%= truncate(post.content, escape: false, length: 250) %></p>
+                    <p>By <a><strong><%= post.user.full_name.titleize %></strong></a>, <%= post.created_at.strftime("%B %d %Y") %> </p>
+                    <p class="fa fa-comments-o"> <span class="badge grey-gradient"> <%= post.comments.count %> </span> </p> &nbsp;
+                    <p class="fa fa-heart"> <span class="badge grey-gradient"> <%= post.get_upvotes.size %> </span> </p>
+                    <div class="center">
+                        <%= link_to 'Read More', post_path(post), class: "btn btn-outline-white grey-gradient mb-3 waves-effect waves-ligh" %>
+                    </div>
+                </div>
+                <!--Grid column-->
+
+            </div>
+
+
+
+
+                    
+                    <% end %>
+                    
+       
         </div>
             <!--Pagination dark grey-->
             <div class="center">
-                <div class="page_info">
+                <div class="page_info white-text">
                     <%= page_entries_info @posts %>
                 </div>
                  <%= will_paginate @posts %>

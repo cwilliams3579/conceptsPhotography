@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container white-text">
   <!-- Magazine -->
   <div class="row">
     <!-- Main  -->
@@ -32,8 +32,8 @@
           </h5>
           <!-- Article -->
           <p><%= simple_format(@post.content) %> <% if can? :update, @post ||= current_user.admin %>
-           <%= link_to '', edit_post_path(@post), data: {content: 'Edit', placement: 'top', trigger: 'hover'}, class: "fa fa-pencil fa-lg white-text" %> &nbsp;
-           <%= link_to '', post_path(@post), method: :delete, data: {confirm: "Are you sure?",  content: 'Delete', placement: 'top', trigger: 'hover'}, class: "fa fa-trash fa-lg white-text" %> 
+           <%= link_to '', edit_post_path(@post), data: {content: 'Edit', placement: 'top', trigger: 'hover'}, class: "fa fa-pencil fa-lg" %> &nbsp;
+           <%= link_to '', post_path(@post), method: :delete, data: {confirm: "Are you sure?",  content: 'Delete', placement: 'top', trigger: 'hover'}, class: "fa fa-trash fa-lg" %> 
           <% end %> &nbsp; &nbsp;</p>
         </div>
          

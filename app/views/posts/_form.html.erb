@@ -1,5 +1,5 @@
 <div class="col-md-4 mx-auto p-top">
-  <div class="card grey-gradient">
+  <div class="card grey-gradient white-text">
     <div class="card-block">
       <div class="form-header grey-gradient">
         <i class="fa fa-book fa-2x"></i>
@@ -27,17 +27,17 @@
           </div>
 
           <div class="md-form">
-            <%= f.label :title %>
-            <%= f.text_field :title, id: :post_title, autofocus: true, class: "form-control white-text" %>
+            <i class="fa fa-tags prefix white-text"></i>
+            <%= f.text_field :title, id: :post_title, placeholder: "Enter title", autofocus: true, class: "form-control white-text" %>
           </div>
 
           <div class="md-form">
-            <%= f.label :description %>
-            <%= f.text_area :content, id: :post_content, class: "md-textarea white-text" %>
+            <i class="fa fa-pencil prefix white-text"></i>
+            <%= f.text_area :content, id: :post_content, placeholder: "Enter description", class: "md-textarea white-text" %>
           </div>
 
           <div class="md-form">
-            <%= f.button class: "btn btn-block btn-lg btn-rounded btn-outline-white grey-gradient", data: { disable_with: "<i class='fa fa-spinner fa-5x fa-spin'></i> Processing..."} %>
+            <%= f.button class: "btn btn-block btn-lg btn-rounded btn-outline-white grey-gradient", data: { disable_with: "<i class='fa fa-spinner fa-5x fa-spin'></i>"} %>
           </div>
         <% end %>
 
