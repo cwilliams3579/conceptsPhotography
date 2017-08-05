@@ -5,11 +5,11 @@
   <div class="comments-list">
     
     <div id="comments-section">
-      <div id="comments"></div>
-        <% Comment.all.each do |comment| %>
+      <div id="comments">
+        <% @post.comments.each do |comment| %>
           <%= simple_format(comment.content) %>
         <% end %>
-      
+      </div>
     </div>
 
   </div>
