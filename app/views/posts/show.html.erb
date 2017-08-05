@@ -39,10 +39,11 @@
          
       </section>
       <div class="section-heading">
-      <%= link_to 'Comments', "#", id: "comments-link" %> <span class="badge white-text grey-gradient"><%= @post.comments.count %></span>
+      <%= link_to 'Comments', "#", id: "comments-link" %> <span class="badge white-text grey-gradient comments-count"><%= @post.comments.count %></span>
     </div>
       <br>
-      <%= render @comments %>
+      <div id="comments">
+        <%= render @comments %>
       </div>
       <!--/ Main  -->
        <hr class="between-sections wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
@@ -67,7 +68,7 @@
           <%= f.text_area :content, class: "md-textarea white-text" %>
         </div>
         <div class="text-center">
-        <%= f.submit  class: "btn btn-outline-white btn-lg btn-rounded grey-gradient" %>
+        <%= f.submit  class: "btn btn-outline-white btn-lg btn-rounded grey-gradient", id: "comment-btn" %>
       </div>
     <% end %>
 </div>

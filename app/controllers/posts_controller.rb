@@ -1,16 +1,16 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  load_and_authorize_resource
   before_action :set_post, only: [:show, :edit, :update, :destroy, :vote]
+  load_and_authorize_resource
 
   respond_to :js, :json, :html
 
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => 4)
+    @posts = Post.paginate(page: params[:page], per_page: 4)
   end
 
   def show
-    @comments = Comment.all
+    # @comments = Comment.all
     @comments = Comment.where(post_id: @post).order("created_at DESC")
     @comments = @post.comments.paginate(page: params[:page], per_page: 3)
   end

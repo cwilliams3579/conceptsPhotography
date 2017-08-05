@@ -68,6 +68,6 @@ end
     end
 
     def gallery_params
-      params.require(:gallery).permit(:title, :user_id, {images: []})
+      params.require(:gallery).permit(:title, :user_id, :slug, {images: []})
     end
 end

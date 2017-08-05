@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!
-
+  before_action :authenticate_user!, only: [:create, :destroy]
+  respond_to :js, :json, :html
 
   def create
     @post = Post.friendly.find(params[:post_id])
+    # @post = Post.friendly.find(params[:comment][:id])
     @comment = @post.comments.build(comment_params)
     @comment.user = current_user
     if @comment.save 
@@ -14,15 +15,10 @@ class CommentsController < ApplicationController
     end
   end
 
-  #   def destroy
-#     # @comment = Comment.find(params[:id])
-#     @comment.destroy
-#     respond_to do |format|
-#       format.html { redirect_to post_path(@post) }
-#       format.json { head :no_content }
-#       format.js   { render :layout => false }
-#     end
-#   end
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+  end
 
   private
 
