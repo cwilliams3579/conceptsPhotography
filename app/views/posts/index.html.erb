@@ -129,10 +129,9 @@
 
                                 <!-- Card footer -->
                                 <div class="card-footer">
-                                    <span class="left"></span>
+                                    <span class="left likes-count badge grey-gradient">Likes <%= post.get_upvotes.size %></span>
                                     <span class="right">
                                     <%=  link_to '', post, data: {content: 'Quick Look', placement: 'top', trigger: 'hover'}, class: "fa fa-eye  white-text" %>
-                                    <%=  link_to '', post, data: {content: 'Like', placement: 'top', trigger: 'hover'}, :class => 'fa fa-thumbs-up white-text' %>
                                     </span>
                                 </div>
 
@@ -147,11 +146,11 @@
                 </div>
         </div>
             <!--Pagination dark grey-->
-            <div class="flickr_pagination">
+            <div class="center">
                 <div class="page_info">
-                    <%#= page_entries_info @posts %>
+                    <%= page_entries_info @posts %>
                 </div>
-                <%#= will_paginate @posts %>
+                 <%= will_paginate(@posts, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-lg') %>
             </div> <br> <br>
             <!--/Pagination dark grey-->
 	<div class="center">

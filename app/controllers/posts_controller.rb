@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :vote]
   before_action :authenticate_user!, except: [:index, :show]
+  load_and_authorize_resource
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :vote]
+
   respond_to :js, :json, :html
 
   def index
@@ -66,6 +68,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :content, :user_id, :image)
+      params.require(:post).permit(:title, :content, :user_id, :image, :slug)
     end
 end
