@@ -21,6 +21,7 @@ gem 'figaro'
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 gem 'searchkick'
 gem 'meta-tags'
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'will_paginate-bootstrap4'
 gem 'rails_admin'

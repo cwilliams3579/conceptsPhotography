@@ -3115,9 +3115,7 @@ section {
 }
 
 
-body {
-  font-family: "Roboto", sans-serif;
-}
+
 
 h1,
 h2,
@@ -12936,7 +12934,7 @@ a.pswp__share--download:hover {
 }
 
 .side-nav .logo-wrapper {
-  height: 140px;
+  height: 140px !important;
 }
 
 .side-nav .logo-wrapper a {
@@ -13144,150 +13142,6 @@ a.pswp__share--download:hover {
 
 .light-side-nav .navbar-form {
   margin: 10px;
-}
-
-.dark-side-nav {
-  background-color: #212121;
-}
-
-.dark-side-nav .logo-wrapper {
-  background: url("https://mdbootstrap.com/images/regular/nature/img%20(17).jpg") no-repeat center center;
-  background-size: cover;
-}
-
-.dark-side-nav li {
-  background-color: #212121;
-}
-
-.dark-side-nav li:hover,
-.dark-side-nav li.active {
-  background-color: #2E2E2E;
-}
-
-.dark-side-nav p {
-  color: #fff;
-}
-
-.dark-side-nav .collapsible a {
-  color: #fff;
-  margin: 0;
-}
-
-.dark-side-nav .collapsible a:active {
-  background-color: #2E2E2E;
-}
-
-.dark-side-nav .collapsible a.active {
-  background-color: #2E2E2E;
-}
-
-.dark-side-nav .collapsible>li {
-  padding: 0;
-}
-
-.dark-side-nav .social {
-  border-top: 1px solid #4B515D;
-  border-bottom: 1px solid #4B515D;
-}
-
-.dark-side-nav .social a {
-  color: #fff;
-}
-
-.colorful-side-nav {
-  background-color: #00695c;
-}
-
-.colorful-side-nav .logo-wrapper {
-  background: url("https://mdbootstrap.com/images/regular/nature/img%20(23).jpg") no-repeat center center;
-  background-size: cover;
-}
-
-.colorful-side-nav li {
-  background-color: #00695c;
-}
-
-.colorful-side-nav li:hover,
-.colorful-side-nav li.active {
-  background-color: #008372;
-}
-
-.colorful-side-nav p {
-  color: #fff;
-}
-
-.colorful-side-nav .collapsible a {
-  margin: 0;
-  color: #fff;
-}
-
-.colorful-side-nav .collapsible a:active {
-  background-color: #008372;
-}
-
-.colorful-side-nav .collapsible a.active {
-  background-color: #008372;
-}
-
-.colorful-side-nav .collapsible>li {
-  padding: 0;
-}
-
-.colorful-side-nav .social {
-  border-top: 1px solid #26a69a;
-  border-bottom: 1px solid #26a69a;
-}
-
-.colorful-side-nav .social a {
-  color: #fff;
-}
-
-.stylish-side-nav {
-  background-color: #3E4551;
-}
-
-.stylish-side-nav .logo-wrapper {
-  background: url("https://mdbootstrap.com/images/regular/nature/img%20(26).jpg") no-repeat center center;
-  background-size: cover;
-}
-
-.stylish-side-nav li {
-  background-color: #3E4551;
-}
-
-.stylish-side-nav li:hover,
-.stylish-side-nav li.active {
-  background-color: #4B515D;
-}
-
-.stylish-side-nav p {
-  color: #fff;
-}
-
-.stylish-side-nav .collapsible a {
-  margin: 0;
-  color: #fff;
-}
-
-.stylish-side-nav .collapsible a:active {
-  background-color: #4B515D;
-}
-
-.stylish-side-nav .collapsible a.active {
-  background-color: #4B515D;
-}
-
-.stylish-side-nav .collapsible>li {
-  padding: 0;
-}
-
-.stylish-side-nav .social {
-  border-top: 1px solid #4B515D;
-  border-bottom: 1px solid #4B515D;
-}
-
-.stylish-side-nav .social a {
-  color: #fff;
 }
 
 .drag-target {
@@ -13696,38 +13550,6 @@ a.pswp__share--download:hover {
 .modal-content .close {
   position: absolute;
   right: 15px;
-}
-
-.modal-cart li p {
-  margin: 5px;
-  font-weight: 400;
-}
-
-.modal-cart li p .badge {
-  margin-left: 10px;
-  margin-top: 3px;
-  font-weight: 400;
-  position: absolute;
-}
-
-.modal-cart li p .quantity {
-  font-size: 16px;
-  margin-right: 7px;
-  font-weight: 300;
-}
-
-.modal-cart .cartPageLink {
-  margin-left: 10px;
-}
-
-.modal-cart .cartPageLink a {
-  text-decoration: underline;
-  color: #666;
-}
-
-.modal-cart .total {
-  float: right;
-  font-weight: 400;
 }
 
 .cf-phone {

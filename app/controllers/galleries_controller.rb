@@ -1,7 +1,8 @@
 class GalleriesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_gallery, only: [:show, :edit, :update, :destroy]
+  before_action :set_gallery, only: [:show, :edit, :update, :destroy, :vote]
   before_action :authorize_admin, only: [:new]
+  respond_to :js, :json, :html
 
   def index
     @galleries = Gallery.paginate(:page => params[:page], :per_page => 4)
@@ -47,6 +48,14 @@ end
     @gallery.destroy
     respond_to do |format|
       format.html { redirect_to galleries_url, notice: 'Gallery was successfully destroyed.' }
+    end
+  end
+
+  def vote
+    if !current_user.liked? @gallery
+      @gallery.liked_by current_user
+    elsif current_user.liked? @gallery
+      @gallery.unliked_by current_user
     end
   end
 
